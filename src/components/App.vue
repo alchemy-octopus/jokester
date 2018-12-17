@@ -5,6 +5,7 @@
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/search">Search</RouterLink>
         <RouterLink to="/myset">My Set</RouterLink>
+        <RouterLink to="/rating">Ratings</RouterLink>
       </nav>
     </header>
     
