@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       // result: null,
-      user: false
+      user: null
     };
   },
   components: {
@@ -37,6 +37,20 @@ export default {
   created() {
     api.test()
       .then(result => this.result = result);
+  },
+  methods: {
+    handleSignUp(profile) {
+      return api.signUp(profile)
+        .then(user => {
+          this.setUser(user);
+        });
+    },
+    handleSignIn(credentials) {
+      return api.signIn(credentials)
+        .then(user => {
+          this.setUser(user);
+        });
+    }
   }
 };
 </script>
