@@ -1,20 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <RouterView></RouterView>
-    Coming from the app component: {{result}}
+    <header>
+      <nav v-if="user">
+        <RouterLink to="/">Home</RouterLink>
+      </nav>
+    </header>
+    
+    <main>
+      <img alt="Vue logo" src="../assets/logo.png">
+      <RouterView v-if="user" :user="user"></RouterView>
+      Coming from the app component: {{result}}
+    
+      <Auth/>
+      
+    </main>
   </div>
 </template>
 
 <script>
 import api from '../services/api';
+// import Home from '../home/Home';
+import Auth from './Auth';
+
+
 export default {
   data() {
     return {
       result: null
     };
   },
-  components: { 
+  components: {
+    Auth 
   },
   created() {
     api.test()
