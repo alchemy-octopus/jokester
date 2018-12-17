@@ -4,6 +4,7 @@
       <nav v-if="user">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/search">Search</RouterLink>
+        <RouterLink to="/myset">My Set</RouterLink>
       </nav>
     </header>
     
