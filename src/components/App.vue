@@ -1,14 +1,14 @@
 <template>
   <div id="app">
     <header>
-      <nav v-if="user">
+      <nav>
         <RouterLink to="/">Home</RouterLink>
       </nav>
     </header>
     
     <main>
       <img alt="Vue logo" src="../assets/logo.png">
-      <RouterView v-if="user" :user="user"></RouterView>
+      <RouterView></RouterView>
       Coming from the app component: {{result}}
     
       <Auth/>
