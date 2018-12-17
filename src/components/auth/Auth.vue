@@ -5,7 +5,7 @@
 
       <p>
         Need to register?
-        <button>Sign Up</button>
+        <button @click="method = 'signup'">Sign Up</button>
       </p>
 
       <form @submit.prevent="handleSignInSubmit(profile)">
@@ -27,7 +27,7 @@
       <h2>Sign Up</h2>
 
       <p>Already have an account?
-        <button>Sign In</button>
+        <button @click="method = 'signin'">Sign In</button>
       </p>
 
       <form>
@@ -44,13 +44,15 @@
         </label>
       </form>
     </div>
+    <pre v-if="error">{{ error }}</pre>
   </section>
 </template>
 
 <script>
 export default {
   props: {
-    onSignIn: Function
+    onSignIn: Function,
+    onSignUp: Function
   },
   data() {
     return {
@@ -67,6 +69,14 @@ export default {
       this.error = '';
 
       this.onSignIn(this.profile)
+        .catch(error => {
+          this.error = error.error;
+        });
+    },
+    handleSignUpSubmit() {
+      this.error = '';
+
+      this.onSignUp(this.profile)
         .catch(error => {
           this.error = error.error;
         });
