@@ -3,13 +3,13 @@
     <header>
       <nav v-if="user">
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/search">Search</RouterLink>
       </nav>
     </header>
     
     <main>
       <img alt="Vue logo" src="../assets/logo.png">
       <RouterView v-if="user" :user="user"/>
-      <!-- Coming from the app component: {{result}} -->
     
       <Auth v-else
         :onSignUp="handleSignUp"
@@ -20,24 +20,21 @@
 
 <script>
 import api from '../services/api';
-// import Home from '../home/Home';
 import Auth from './auth/Auth';
-
 
 export default {
   data() {
     return {
-      // result: null,
-      user: null
+      user: true
     };
   },
   components: {
-    Auth 
+    Auth
   },
-  created() {
-    api.test()
-      .then(result => this.result = result);
-  },
+  // created() {
+  //   api.test()
+  //     .then(result => this.result = result);
+  // },
   methods: {
     handleSignUp(profile) {
       return api.signUp(profile)
