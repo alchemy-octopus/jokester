@@ -4,23 +4,22 @@
     <p>
         Jokes go here, not hooked to API yet.
     </p>
-    {{restaurants}}
   </section>
 </template>
 
 <script>
-import restaurantApi from '../../services/restaurantApi';
+// import api from '../../services/api';
 
 export default {
-  data() {
-    return {
-      restaurants: null
-    };
-  },
-  created() {
-    restaurantApi.getAll()
-      .then(restaurants => this.restaurants = restaurants);
-  }
+  // data() {
+  //   return {
+  //     jokes: null
+  //   };
+  // },
+  // created() {
+  //   restaurantApi.getAll()
+  //     .then(restaurants => this.restaurants = restaurants);
+  // }
 
 
 };

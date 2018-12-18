@@ -17,23 +17,23 @@
    </form>
  </template>
  
-  <script>
- export default {
-   props: {
-     onSubmit: Function,
-     prompt: String
-   },
-   data() {
-     return {
-       profile: {
-         username: '',
-         password: ''
-       },
-       showPassword: false
-     };
-   }
- };
- </script>
+<script>
+export default {
+  props: {
+    onSubmit: Function,
+    prompt: String
+  },
+  data() {
+    return {
+      profile: {
+        username: '',
+        password: ''
+      },
+      showPassword: false
+    };
+  }
+};
+</script>
  
   <style lang="postcss" scoped>
  
