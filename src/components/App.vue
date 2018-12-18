@@ -1,24 +1,56 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <RouterView></RouterView>
-    Coming from the app component: {{result}}
+    <header>
+      <nav v-if="user">
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/search">Search</RouterLink>
+        <RouterLink to="/myset">My Set</RouterLink>
+        <RouterLink to="/rating">Ratings</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+      </nav>
+    </header>
+    
+    <main>
+      <img alt="Vue logo" src="../assets/logo.png">
+      <RouterView v-if="user" :user="user"/>
+    
+      <Auth v-else
+        :onSignUp="handleSignUp"
+        :onSignIn="handleSignIn"/>
+    </main>
   </div>
 </template>
 
 <script>
 import api from '../services/api';
+import Auth from './auth/Auth';
+
 export default {
   data() {
     return {
-      result: null
+      user: true
     };
   },
-  components: { 
+  components: {
+    Auth
   },
-  created() {
-    api.test()
-      .then(result => this.result = result);
+  // created() {
+  //   api.test()
+  //     .then(result => this.result = result);
+  // },
+  methods: {
+    handleSignUp(profile) {
+      return api.signUp(profile)
+        .then(user => {
+          this.setUser(user);
+        });
+    },
+    handleSignIn(credentials) {
+      return api.signIn(credentials)
+        .then(user => {
+          this.setUser(user);
+        });
+    }
   }
 };
 </script>
