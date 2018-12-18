@@ -10,6 +10,7 @@
         <RouterLink to="/myset">My Set</RouterLink>
         <RouterLink to="/rating">Ratings</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <a href="#" @click="handleLogout">Logout</a>
       </nav>
     </header>
     
