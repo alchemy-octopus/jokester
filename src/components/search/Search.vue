@@ -2,6 +2,7 @@
   <section>
     <div>
       <h2>Search for a Joke</h2>
+      <button @click="getJokes()">Click</button>
       <JokesList/>
       <Modal v-if="showModal" :onClose="() => showModal"/>
     </div>
@@ -9,13 +10,20 @@
 </template>
 
 <script>
-import JokesList from './JokesList.vue';
-import Modal from '../shared/Modal.vue';
+import api from '../../services/api';
+import JokesList from './JokesList';
+import Modal from '../shared/Modal';
 
 export default {
   components: {
     JokesList,
     Modal
+  },
+  methods: {
+    getJokes() {
+      api.getJokes('cat')
+        .then(response => console.log('joke', response));
+    }
   }
 };
 </script>

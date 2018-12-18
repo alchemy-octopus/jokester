@@ -47,6 +47,10 @@ export default {
             return Promise.reject(error);
           });
       });
+  },
+  getJokes(searchTerm = '') {
+    return fetch(`https://icanhazdadjoke.com/search?term=${searchTerm}`, { headers: { Accept:'application/json' } })
+      .then(response => response.json());
   }
 };
 
