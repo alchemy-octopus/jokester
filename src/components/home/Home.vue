@@ -1,4 +1,4 @@
-<template>
+ <template>
   <section>
     <h2>Welcome to Joke Project!</h2>
     <p>
