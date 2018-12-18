@@ -26,6 +26,7 @@
 
 <script>
 import CredentialsForm from './CredentialsForm';
+
 export default {
   props: {
     onSignIn: Function,
@@ -51,6 +52,7 @@ export default {
     },
     handleSignUp(profile) {
       this.error = '';
+      
       this.onSignUp(profile)
         .catch(error => {
           this.error = error.error;
