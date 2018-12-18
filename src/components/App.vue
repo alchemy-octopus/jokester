@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <header>
+      <span v-if="user">
+        Hello {{user.username}}!
+      </span>
       <nav v-if="user">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/search">Search</RouterLink>
@@ -28,7 +31,7 @@ import Auth from './auth/Auth';
 export default {
   data() {
     return {
-      user: true
+      user: null
     };
   },
   components: {
@@ -50,18 +53,46 @@ export default {
         .then(user => {
           this.setUser(user);
         });
+    },
+    setUser(user) {
+      this.user = user;
+      if(user) {
+        api.setToken(user.token);
+        window.localStorage.setItem('profile', JSON.stringify(user));
+      }
+      else {
+        api.setToken();
+        window.localStorage.removeItem('profile');
+      }
+    },
+    handleLogout() {
+      this.setUser(null);
+      this.$router.push('/');
     }
   }
 };
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+header {
+  height: 75px;
+  background: lightsteelblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header img {
+  height: 100%;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  margin: 3px;
+  padding: 3px;
+  border: 1px solid black;
+}
+main {
+  padding: 8px;
 }
 </style>
+  
