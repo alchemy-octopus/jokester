@@ -2,7 +2,6 @@
   <section>
     <ul>
       <h3>Jokes List</h3>
-      
       <Joke v-for="joke in jokes"
         :key="joke.id"
         :joke="joke"

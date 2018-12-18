@@ -1,6 +1,7 @@
 <template>
     <section>
-        <Search :search="search"/>
+        <Search :search="search"
+            />
         <JokesList :jokes="jokes"/>
     </section>
 
@@ -41,7 +42,7 @@ export default {
       if(!this.search) return;
       api.getJokes(this.search)
         .then(response => {
-          this.jokes = response.jokes;
+          this.jokes = response.results;
         });
     }
   }

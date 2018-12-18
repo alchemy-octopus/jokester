@@ -1,7 +1,7 @@
 <template>
   <section>
     <li>
-      {{results.joke}}
+      {{joke.joke}}
     </li>
   </section>
 </template>
