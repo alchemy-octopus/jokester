@@ -2,27 +2,40 @@
   <section>
     <div>
       <h2>Search for a Joke</h2>
-      <button @click="getJokes()">Click</button>
-      <JokesList/>
-      <Modal v-if="showModal" :onClose="() => showModal"/>
-    </div>
+        <form @submit.prevent="handleSubmit">
+          <input v-model="keyword" required>
+          <button>Search</button>
+        </form>
+      </div>
   </section>
 </template>
 
 <script>
-import api from '../../services/api';
-import JokesList from './JokesList';
-import Modal from '../shared/Modal';
 
 export default {
-  components: {
-    JokesList,
-    Modal
+  props: {
+    search: String,
+    onSearch: Function
+  },
+  data() {
+    return {
+      keyword: this.search || ''
+    };
+  },
+  watch: {
+    search(newSearch) {
+      if(this.keyword !== newSearch) {
+        this.keyword = newSearch;
+      }
+    }
   },
   methods: {
-    getJokes() {
-      api.getJokes('cat')
-        .then(response => console.log('joke', response));
+    handleSubmit() {
+      this.$router.push({
+        query: {
+          search: encodeURIComponent(this.keyword)
+        }
+      });
     }
   }
 };

@@ -11,6 +11,7 @@
 import Joke from './Joke.vue';
 
 export default {
+  
   components: {
     Joke
   }
