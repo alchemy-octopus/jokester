@@ -38,10 +38,12 @@ export default {
   components: {
     Auth
   },
-  // created() {
-  //   api.test()
-  //     .then(result => this.result = result);
-  // },
+  created() {
+    const json = window.localStorage.getItem('profile');
+    if(json) {
+      this.setUser(JSON.parse(json));
+    }
+  },
   methods: {
     handleSignUp(profile) {
       return api.signUp(profile)
