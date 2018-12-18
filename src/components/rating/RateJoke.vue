@@ -1,13 +1,15 @@
 <template>
-    <li>
-        Rate Joke Card
-    </li>
+    <div>
+        <li>
+            Rate Joke Card
+        </li>
+    </div>
 </template>
 
 <script>
 export default {
 
-}
+};
 </script>
 
 <style>
