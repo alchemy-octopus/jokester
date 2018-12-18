@@ -1,7 +1,7 @@
 <template>
     <section>
         <Search :search="search"/>
-        <JokesList/>
+        <JokesList :jokes="jokes"/>
     </section>
 
 </template>
