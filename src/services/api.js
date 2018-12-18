@@ -47,8 +47,15 @@ export default {
             return Promise.reject(error);
           });
       });
+  },
+
+  addJoke(joke) {
+    return fetch('/api/jokes', getOptions('POST', joke))
+      .then(response => response.json());
   }
 };
+
+
 
 //   test() {
 //     return fetch('/api')

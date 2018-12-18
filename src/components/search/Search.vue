@@ -2,7 +2,8 @@
   <section>
     <div>
       <h2>Search for a Joke</h2>
-      <AddJoke v-bind:onAdd="handleAdd"/>
+      <button @click="show = true">Add A Joke</button>
+      <AddJoke :onAdd="handleAdd" v-if="show" :onClose="() => show = false"/>
       <JokesList/>
       <p>This will be a list of jokes</p>
     </div>
@@ -17,7 +18,8 @@ import AddJoke from './AddJoke.vue';
 export default {
   data() {
     return {
-      goals: null
+      jokes: [], //needs to be null when getJokes() is here
+      show: false
     };
   },
   components: {
@@ -25,10 +27,12 @@ export default {
     AddJoke
   },
   methods: {
-    handleAdd(goal) {
-      return api.addGoal(goal)
+    handleAdd(joke) {
+      console.log('joke is ', joke);
+      return api.addJoke(joke)
         .then(saved => {
-          this.goals.push(saved);
+          console.log('this.jokes is ', this.jokes);
+          this.jokes.push(saved);
         });
     }
   }
