@@ -3,7 +3,7 @@
     <div>
       <h2>Search for a Joke</h2>
       <JokesList/>
-      <Modal/>
+      <Modal v-if="showModal" :onClose="() => showModal"/>
     </div>
   </section>
 </template>

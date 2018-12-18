@@ -9,9 +9,9 @@
 import SetList from './SetList';
 
 export default {
-    components: {
-        SetList
-    }
+  components: {
+    SetList
+  }
 };
 </script>
 
