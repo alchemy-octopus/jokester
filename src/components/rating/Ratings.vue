@@ -24,6 +24,7 @@ export default {
     api.getMyJokes()
       .then(jokes => {
         this.jokes = jokes;
+        console.log('joke is', this.jokes);
       })
       .catch(err => {
         this.error = err;

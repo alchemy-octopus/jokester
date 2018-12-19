@@ -14,6 +14,9 @@
 import Rating from './Rating';
 
 export default {
+  props: {
+    jokes: null
+  },
   components: {
     Rating
   }

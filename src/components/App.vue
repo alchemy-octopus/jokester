@@ -8,7 +8,7 @@
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/search">Search</RouterLink>
         <RouterLink to="/myset">My Set</RouterLink>
-        <RouterLink to="/rating">Ratings</RouterLink>
+        <RouterLink to="/ratings">Ratings</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <a href="#" @click="handleLogout">Logout</a>
       </nav>
