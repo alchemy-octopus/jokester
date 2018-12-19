@@ -48,18 +48,19 @@ export default {
           });
       });
   },
-  getRatings() {
-    return fetch('/api/ratings', getOptions('GET'))
-      .then(response => response.json());
-  },
-
+  
   getJokes(searchTerm = '') {
     return fetch(`https://icanhazdadjoke.com/search?term=${searchTerm}`, { headers: { Accept:'application/json' } })
       .then(response => response.json());
   },
-
+  
   addJoke(joke) {
     return fetch('/api/jokes', getOptions('POST', joke))
+      .then(response => response.json());
+  },
+  
+  getRatings() {
+    return fetch('/api/ratings', getOptions('GET'))
       .then(response => response.json());
   },
 
@@ -67,6 +68,7 @@ export default {
     return fetch('/api/ratings', getOptions('POST', rating))
       .then(response => response.json());
   },
+
   //is the api different, not using token? 
   getMyJokes() {
     return fetch('/api/jokes', getOptions('GET'))
