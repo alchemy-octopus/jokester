@@ -5,7 +5,7 @@
            <Rating v-for="joke in jokes" 
            :key="joke.id"
            :joke="joke"
-           v-bind:onRate="onRate"/>
+           />
         </ul>
     </section>
 </template>

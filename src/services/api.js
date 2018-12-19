@@ -74,7 +74,12 @@ export default {
     return fetch('/api/jokes', getOptions('GET'))
       .then(response => response.json());
   },
-  
+
+  getRateJokes(rateId) {
+    return fetch(`/api/jokes/${rateId}`, { headers: { Accept:'application/json' } })
+      .then(response => response.json());
+  },
+
   deleteMyJoke(id) {
     return fetch(`/api/jokes/${id}`, getOptions('DELETE'))
       .then(response => response.json());
