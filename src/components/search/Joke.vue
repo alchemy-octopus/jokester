@@ -15,9 +15,13 @@ export default {
   },
   methods: {
     handleAdd() {
-      this.addSearchJoke(this.joke)
-        .the(() => {
-          this.joke = { };
+      let searchJoke = {
+        title: this.joke.joke,
+        source: 'search'
+      };
+      api.addSearchJoke(searchJoke)
+        .then(result => {
+          console.log('result', result);
         });
     }
   }
