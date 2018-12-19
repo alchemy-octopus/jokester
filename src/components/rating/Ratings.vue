@@ -25,7 +25,8 @@ import RatingList from './RatingList';
 export default {
   data() {
     return {
-      jokes: null
+      jokes: null,
+      profiles: null
     };
   },
   components: {
@@ -48,6 +49,11 @@ export default {
       .catch(err => {
         this.error = err;
       });
+  },
+  methods: {
+    handleRate() {
+      console.log('');
+    } 
   }
 
 
