@@ -47,10 +47,14 @@ export default {
             return Promise.reject(error);
           });
       });
+  },
+  getRatings() {
+    return fetch('/api/ratings', getOptions('GET'))
+      .then(response => response.json());
+  },
+
+  addRating(rating) {
+    return fetch('/api/ratings', getOptions('POST', rating))
+      .then(response => response.json());
   }
 };
-
-//   test() {
-//     return fetch('/api')
-//       .then(response => response.json());
-//   }

@@ -10,9 +10,9 @@
 <script>
 import RateJoke from './RateJoke';
 export default {
-    components: {
-        RateJoke
-    }
+  components: {
+    RateJoke
+  }
 };
 </script>
 

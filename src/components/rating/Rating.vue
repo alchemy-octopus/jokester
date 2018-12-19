@@ -6,13 +6,24 @@
 </template>
 
 <script>
+import api from '../../services/api';
 import RatingList from './RatingList';
 
 export default {
-    components: {
-        RatingList
-    }
-
+  data() {
+    return {
+      ratings: null  
+    };
+  },
+  components: {
+    RatingList
+  },
+  created() {
+    api.getRatings()
+      .then(ratings => {
+        this.ratings = ratings;
+      });
+  }
 };
 </script>
 
