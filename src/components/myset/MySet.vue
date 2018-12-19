@@ -1,16 +1,16 @@
 <template>
     <section>
-        <h3>Joke Joke Joke</h3>
+        <h1>Joke Joke Joke</h1>
         <SetList/>
     </section>
 </template>
 
 <script>
-import SetList from './SetList';
+// import SetList from './SetList.vue;
 
 export default {
   components: {
-    SetList
+    // SetList
   }
 };
 </script>

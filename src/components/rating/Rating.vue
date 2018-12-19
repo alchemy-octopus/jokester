@@ -9,9 +9,9 @@
 import RatingList from './RatingList';
 
 export default {
-    components: {
-        RatingList
-    }
+  components: {
+    RatingList
+  }
 
 };
 </script>

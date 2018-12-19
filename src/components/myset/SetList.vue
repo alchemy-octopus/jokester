@@ -10,9 +10,9 @@
 import MyJoke from './MyJoke';
 
 export default {
-    components: {
-        MyJoke
-    }
+  components: {
+    MyJoke
+  }
 };
 </script>
 

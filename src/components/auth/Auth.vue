@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import CredentialsForm from './CredentialsForm';
+import CredentialsForm from './CredentialsForm.vue';
 export default {
   props: {
     onSignIn: Function,
