@@ -1,7 +1,7 @@
 <template>
     <div>
         <li>
-            Rate Joke Card
+           Rate a Joke
         </li>
     </div>
 </template>
