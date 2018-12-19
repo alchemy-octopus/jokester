@@ -6,7 +6,15 @@
           <select v-if="profiles"
             v-model="profiles.username"
             required
-          />
+          >
+            <option value="-1" disabled>Select a User</option>
+            <option v-for="profile in profiles"
+              :key="profile.id"
+              :value="profile.id"
+            >
+            {{profile.username}}
+            </option>          
+          </select>
     </div>
 </template>
 
@@ -31,7 +39,17 @@ export default {
       .catch(err => {
         this.error = err;
       });
-  },
+
+    api.getProfiles()
+      .then(profiles => {
+        this.profiles = profiles;
+        console.log('profiles is ', profiles);
+      })
+      .catch(err => {
+        this.error = err;
+      });
+  }
+
 
   //need to add methods section with rating function
 
