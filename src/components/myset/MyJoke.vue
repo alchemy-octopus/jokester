@@ -8,20 +8,18 @@
 </template>
 
 <script>
-import api from '../../services/api';
 
 export default {
   props: {
-    joke: Object
+    joke: Object,
+    onDelete: Function
   },
   methods: {
     handleDelete() {
-      api.deleteMyJoke(this.joke.id)
-        .then(() => [
-          this.$router.push('/jokes')
-        ]);
+      this.onDelete(this.joke.id);
     }
   }
+  
     
 };
 </script>

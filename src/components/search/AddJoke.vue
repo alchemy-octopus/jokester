@@ -4,7 +4,7 @@
         <button class="close" @click="onClose">X</button>
         <h3>Add Your Own Joke</h3>
         <p><label>Joke Text:</label></p>
-        <input autofocus v-focus v-model="joke.title"  require>
+        <input autofocus v-focus v-model="joke.title" required>
         <button>Add</button>
     </form>
   </div>
@@ -34,8 +34,11 @@ export default {
       this.onAdd(this.joke)
         .then(() => {
           this.joke = initJoke();
+          this.onClose();
         });
-    }
+
+    },
+    
   },
   created() {
     this.documentListener = event => {

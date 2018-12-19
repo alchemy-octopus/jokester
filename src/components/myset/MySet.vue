@@ -2,7 +2,8 @@
     <section>
         <h3>Joke Joke Joke</h3>
         <MySetList v-if="jokes"
-          :jokes="jokes"/>
+          :jokes="jokes"
+          :onDelete="handleDelete"/>
     </section>
 </template>
 
@@ -27,6 +28,17 @@ export default {
       .catch(err => {
         this.error = err;
       });
+  },
+  methods: {
+    handleDelete(id){
+      console.log('banana', id);
+      api.deleteMyJoke(id)
+        .then(() => {
+          this.jokes = this.jokes.filter(joke => {
+            return joke.id !== id;
+          });
+        });   
+    }
   }
 };
 </script>
