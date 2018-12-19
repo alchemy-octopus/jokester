@@ -1,5 +1,6 @@
 <template>
     <div>
+      <form @submit.prevent="onSubmit(id)">
         <h2>Rate Other User's Jokes</h2>
         <RatingList :onRate="handleRate" :jokes="jokes"/>
         <span>Other Sets: </span>
@@ -15,6 +16,8 @@
             {{profile.username}}
             </option>          
           </select>
+          <button>Select</button>
+      </form>
     </div>
 </template>
 
