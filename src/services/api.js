@@ -74,8 +74,14 @@ export default {
     return fetch('/api/jokes', getOptions('GET'))
       .then(response => response.json());
   },
+  
   deleteMyJoke(id) {
     return fetch(`/api/jokes/${id}`, getOptions('DELETE'))
       .then(response => response.json());
-  }
+  },
+
+  getProfiles() {
+    return fetch('/api/profiles', getOptions('GET'))
+      .then(response => response.json());
+  },
 };

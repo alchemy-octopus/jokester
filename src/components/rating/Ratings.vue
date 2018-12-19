@@ -2,8 +2,11 @@
     <div>
         <h2>Rate Other User's Jokes</h2>
         <RatingList :onRate="handleRate" :jokes="jokes"/>
-
-
+        <span>Other Sets: </span>
+          <select v-if="profiles"
+            v-model="profiles.username"
+            required
+          />
     </div>
 </template>
 
