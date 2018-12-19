@@ -8,7 +8,7 @@
            />
         </ul>
 
-    <form @submit.prevent="onSubmit(id)">
+    <form @submit.prevent="onEdit(selectedUser)">
         <h2>Rate Other User's Jokes</h2>
         <span>Other Sets: </span>
           <select v-if="profiles"
@@ -23,7 +23,7 @@
             {{profile.username}}
             </option>          
           </select>
-          <button>Select</button>
+          <button type="submit">Select</button>
       </form>
     </section>
 </template>
@@ -32,9 +32,16 @@
 import Rating from './Rating';
 
 export default {
+  data() {
+    return {
+      selectedUser: null
+    };
+  },
+  
   props: {
     jokes: null,
-    profiles: Object
+    profiles: Array,
+    onEdit: Function
   },
   components: {
     Rating
