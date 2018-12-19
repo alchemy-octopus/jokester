@@ -5,7 +5,7 @@
            <Rating v-for="joke in jokes" 
            :key="joke.id"
            :joke="joke"
-           v-bind:onRate="onRate"/>
+           />
         </ul>
     </section>
 </template>
@@ -14,6 +14,9 @@
 import Rating from './Rating';
 
 export default {
+  props: {
+    jokes: null
+  },
   components: {
     Rating
   }

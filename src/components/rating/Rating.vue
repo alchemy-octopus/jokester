@@ -1,29 +1,23 @@
 <template>
     <section>
-        <h3>Ratings Page</h3>
-        <RatingList/>
+        <li>
+          {{joke.title}}
+          <RateJoke/>
+        </li>
     </section>
 </template>
 
 <script>
-import api from '../../services/api';
-import RatingList from './RatingList';
+import RateJoke from './RateJoke';
 
 export default {
-  data() {
-    return {
-      ratings: null  
-    };
+  props: {
+    joke: null,
+    onRate: Function
   },
   components: {
-    RatingList
+    RateJoke
   },
-  created() {
-    api.getRatings()
-      .then(ratings => {
-        this.ratings = ratings;
-      });
-  }
 };
 </script>
 

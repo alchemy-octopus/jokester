@@ -1,9 +1,23 @@
 <template>
     <div>
+      <form @submit.prevent="onSubmit(id)">
         <h2>Rate Other User's Jokes</h2>
-        <RatingList :onRate="handleRate" :jokes="jokes"/>
-
-
+        <RatingList :jokes="jokes"/>
+        <span>Other Sets: </span>
+          <select v-if="profiles"
+            v-model="profiles.username"
+            required
+          >
+            <option value="-1" disabled>Select a User</option>
+            <option v-for="profile in profiles"
+              :key="profile.id"
+              :value="profile.id"
+            >
+            {{profile.username}}
+            </option>          
+          </select>
+          <button>Select</button>
+      </form>
     </div>
 </template>
 
@@ -14,7 +28,8 @@ import RatingList from './RatingList';
 export default {
   data() {
     return {
-      jokes: null
+      jokes: null,
+      profiles: null
     };
   },
   components: {
@@ -28,7 +43,20 @@ export default {
       .catch(err => {
         this.error = err;
       });
+
+    api.getProfiles()
+      .then(profiles => {
+        this.profiles = profiles;
+        console.log('profiles is ', profiles);
+      })
+      .catch(err => {
+        this.error = err;
+      });
   },
+  methods: {
+
+  }
+
 
   //need to add methods section with rating function
 
