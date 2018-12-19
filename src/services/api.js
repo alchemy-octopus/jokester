@@ -61,9 +61,7 @@ export default {
   addJoke(joke) {
     return fetch('/api/jokes', getOptions('POST', joke))
       .then(response => response.json());
-  }
-
-
+  },
   addRating(rating) {
     return fetch('/api/ratings', getOptions('POST', rating))
       .then(response => response.json());
