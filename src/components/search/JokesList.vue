@@ -15,7 +15,7 @@ import Joke from './Joke.vue';
 
 export default {
   props: {
-    jokes: null
+    jokes: Array
   },
   components: {
     Joke
