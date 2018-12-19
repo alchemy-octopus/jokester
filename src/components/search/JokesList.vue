@@ -2,7 +2,10 @@
   <section>
     <ul>
       <h3>Jokes List</h3>
-      <Joke/>
+      <Joke v-for="joke in jokes"
+        :key="joke.id"
+        :joke="joke"
+        />
     </ul>
   </section>  
 </template>
@@ -11,7 +14,9 @@
 import Joke from './Joke.vue';
 
 export default {
-  
+  props: {
+    jokes: Array
+  },
   components: {
     Joke
   }
