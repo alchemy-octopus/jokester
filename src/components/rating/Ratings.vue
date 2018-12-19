@@ -1,11 +1,14 @@
 <template>
     <div>
-      <form @submit.prevent="onSubmit(id)">
+      <RatingList 
+        :onRate="handleRate" 
+        :jokes="jokes"
+        :profiles="profiles"/>
+      <!-- <form @submit.prevent="onSubmit(id)">
         <h2>Rate Other User's Jokes</h2>
-        <RatingList :jokes="jokes"/>
         <span>Other Sets: </span>
           <select v-if="profiles"
-            v-model="profiles.username"
+            v-model="selectedUser"
             required
           >
             <option value="-1" disabled>Select a User</option>
@@ -17,7 +20,7 @@
             </option>          
           </select>
           <button>Select</button>
-      </form>
+      </form> -->
     </div>
 </template>
 
@@ -29,7 +32,8 @@ export default {
   data() {
     return {
       jokes: null,
-      profiles: null
+      profiles: null,
+      selectedUser: null
     };
   },
   components: {
@@ -54,7 +58,9 @@ export default {
       });
   },
   methods: {
-
+    handleRate() {
+      console.log('');
+    } 
   }
 
 
@@ -66,3 +72,4 @@ export default {
 <style>
 
 </style>
+
