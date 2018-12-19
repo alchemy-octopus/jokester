@@ -1,7 +1,7 @@
 <template>
     <section>
-        <li>
-            JOKE
+        <li :joke="joke">
+            {{joke.title}}
         </li>
     </section>
 </template>
@@ -9,6 +9,9 @@
 <script>
 
 export default {
+  props: {
+    joke: Object
+  }
     
 };
 </script>

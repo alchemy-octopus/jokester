@@ -1,16 +1,32 @@
 <template>
     <section>
         <h3>Joke Joke Joke</h3>
-        <SetList/>
+        <MySetList v-if="jokes"
+          :jokes="jokes"/>
     </section>
 </template>
 
 <script>
-import SetList from './SetList';
+import api from '../../services/api';
+import MySetList from './MySetList';
 
 export default {
+  data() {
+    return {
+      jokes: null
+    };
+  },
   components: {
-    SetList
+    MySetList
+  },
+  created() {
+    api.getMyJokes()
+      .then(jokes => {
+        this.jokes = jokes;
+      })
+      .catch(err => {
+        this.error = err;
+      });
   }
 };
 </script>
