@@ -77,5 +77,9 @@ export default {
   deleteMyJoke(id) {
     return fetch(`/api/jokes/${id}`, getOptions('DELETE'))
       .then(response => response.json());
+  },
+  addSearchJoke(joke) {
+    return fetch('/api/jokes', getOptions('POST', joke))
+      .then(response => response.json());
   }
 };
