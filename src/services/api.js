@@ -53,6 +53,17 @@ export default {
       .then(response => response.json());
   },
 
+  getJokes(searchTerm = '') {
+    return fetch(`https://icanhazdadjoke.com/search?term=${searchTerm}`, { headers: { Accept:'application/json' } })
+      .then(response => response.json());
+  },
+
+  addJoke(joke) {
+    return fetch('/api/jokes', getOptions('POST', joke))
+      .then(response => response.json());
+  }
+
+
   addRating(rating) {
     return fetch('/api/ratings', getOptions('POST', rating))
       .then(response => response.json());

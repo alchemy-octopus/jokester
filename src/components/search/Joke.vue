@@ -1,14 +1,16 @@
 <template>
   <section>
     <li>
-      Joke
+      {{joke.joke}}
     </li>
   </section>
 </template>
 
 <script>
 export default {
-
+  props: {
+    joke: Object
+  }
 };
 </script>
 
