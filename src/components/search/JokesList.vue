@@ -24,13 +24,5 @@ export default {
 </script>
 
 <style>
-ul {
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow-y: auto;
-}
+
 </style>
