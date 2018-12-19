@@ -5,6 +5,7 @@ const getOptions = (method, data) => {
     method, 
     headers: {}
   };
+  console.log(token);
 
   if(data) {
     options.headers['Content-Type'] = 'application/json';
@@ -85,8 +86,15 @@ export default {
       .then(response => response.json());
   },
 
+
   getProfiles() {
     return fetch('/api/profiles', getOptions('GET'))
       .then(response => response.json());
   },
+
+  addSearchJoke(joke) {
+    return fetch('/api/jokes', getOptions('POST', joke))
+      .then(response => response.json());    
+  }
+
 };
