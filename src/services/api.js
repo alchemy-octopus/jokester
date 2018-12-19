@@ -65,5 +65,10 @@ export default {
   addRating(rating) {
     return fetch('/api/ratings', getOptions('POST', rating))
       .then(response => response.json());
+  },
+  //is the api different, not using token? 
+  getMyJokes() {
+    return fetch('/api/jokes', getOptions('GET'))
+      .then(response => response.json());
   }
 };
