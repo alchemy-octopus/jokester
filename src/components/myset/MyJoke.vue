@@ -3,16 +3,16 @@
         <li>
             {{joke.title}}
             <button @click="handleDelete">Remove from my set</button>
-            <button @click="show = true">Edit ✎</button>
-            <button @click="show = true">Details</button>
+            <button @click="editShow = true">Edit ✎</button>
+            <button @click="detailShow = true">Details</button>
             <MyJokeDetail 
-              v-if="show" 
-              :onClose="() => show = false" 
+              v-if="detailShow" 
+              :onClose="() => detailShow = false" 
               :joke="joke"
               :onRate="handleRate"
             /> 
         </li>
-        <EditMyJoke v-if="show" :onClose="() => show = false"
+        <EditMyJoke v-if="editShow" :onClose="() => editShow = false"
         :joke="joke"
         :onEdit="onEdit"
         />
@@ -34,7 +34,8 @@ export default {
   },
   data() {
     return {
-      show: false
+      detailShow: false,
+      editShow: false
     };
   },
   components: {
