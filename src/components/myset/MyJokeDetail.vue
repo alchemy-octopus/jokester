@@ -5,8 +5,8 @@
           <p>{{joke.title}}</p>
           <star-rating 
             v-model="rating"
-            v-bind:star-size="10"
-            v-bind:read-only=true
+            :star-size="10"
+            :read-only=true
             >
           </star-rating>
           <p>{{joke.source}}</p>
@@ -36,7 +36,6 @@ export default {
       .then(rating => {
         if(this.rating)
         {this.rating = parseInt(rating[0].rating);}
-        console.log('rating is ', parseInt(rating[0].rating));
       })
       .catch(err => {
         this.error = err;
@@ -55,8 +54,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-
-
 
 .modal {
   position: fixed;

@@ -9,7 +9,6 @@
                 :onEdit="onEdit"
                 />
         </ul>
-        
     </section>
 </template>
 <script>
@@ -33,7 +32,6 @@ export default {
   width: 100vw;
   position: absolute;
   z-index: -1;
-
 }
 
 </style>

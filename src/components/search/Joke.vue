@@ -26,14 +26,13 @@ export default {
   methods: {
     handleAdd() {
       this.buttonShow = false;
-
       let searchJoke = {
         title: this.joke.joke,
         source: 'search'
       };
       api.addSearchJoke(searchJoke)
         .then(result => {
-          console.log('result', result);
+          this.result = result;
         });
     }
   }

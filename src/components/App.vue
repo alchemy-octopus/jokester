@@ -15,9 +15,7 @@
     </header>
     
     <main>
-      <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
       <RouterView v-if="user" :user="user"/>
-    
       <Auth v-else
         :onSignUp="handleSignUp"
         :onSignIn="handleSignIn"/>

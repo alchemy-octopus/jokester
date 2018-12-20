@@ -12,7 +12,9 @@
               :onRate="handleRate"
             /> 
         </li>
-        <EditMyJoke v-if="editShow" :onClose="() => editShow = false"
+        <EditMyJoke 
+        v-if="editShow" 
+        :onClose="() => editShow = false"
         :joke="joke"
         :onEdit="onEdit"
         />
@@ -53,7 +55,6 @@ export default {
       api.getRatings(this.joke.id)
         .then(rating => {
           this.rating = rating;
-          console.log('rating is ', rating);
         })
         .catch(err => {
           this.error = err;
