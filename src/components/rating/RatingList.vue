@@ -1,7 +1,8 @@
 <template>
     <section>
         <ul v-if="jokes">
-           <Rating v-for="joke in jokes" 
+           <Rating v-for="joke in jokes"
+           :onRate="handleRate" 
            :key="joke.id"
            :joke="joke"
            />
@@ -28,6 +29,7 @@
 </template>
 
 <script>
+import api from '../../services/api';
 import Rating from './Rating';
 
 export default {
@@ -36,7 +38,6 @@ export default {
       selectedUser: null
     };
   },
-  
   props: {
     jokes: null,
     profiles: Array,
@@ -44,6 +45,15 @@ export default {
   },
   components: {
     Rating
+  },
+  methods: {
+    handleRate(rated) {
+      api.addRating(rated)
+      // .then(result => {
+          
+      // })
+      ;
+    } 
   }
 };
 </script>

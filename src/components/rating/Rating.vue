@@ -4,7 +4,7 @@
           {{joke.title}}
           <star-rating 
             v-bind:star-size="30"
-            @rating-selected ="setRating">
+            @rating-selected="setRating">
           </star-rating>
         </li>
     </section>
@@ -24,6 +24,12 @@ export default {
   methods: {
     setRating: function(rating){
       this.rating = rating;
+      console.log('rating is ', this.rating);
+      let rated = {
+        rating: rating,
+        jokeId: this.joke.id
+      };
+      this.onRate(rated);
     }
   },
   data() {
