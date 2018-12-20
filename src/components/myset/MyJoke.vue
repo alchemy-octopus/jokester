@@ -1,20 +1,32 @@
 <template>
     <section>
-        <li :joke="joke">
+        <li>
             {{joke.title}}
             <button @click="handleDelete">Remove from my set</button>
-            <button @click="handleEdit">Edit ✎</button>
+            <button @click="handleEdit => show = !show">Edit ✎</button>
         </li>
+        <EditMyJoke v-if="show" :onClose="() => show = false"
+        :joke="joke"
+        :onEdit="handleEdit"/>
     </section>
 </template>
 
 <script>
+import EditMyJoke from './EditMyJoke';
 
 export default {
   props: {
     joke: Object,
     onDelete: Function,
     onEdit: Function
+  },
+  data() {
+    return {
+      show: false
+    };
+  },
+  components: {
+    EditMyJoke
   },
   methods: {
     handleDelete() {
@@ -23,10 +35,7 @@ export default {
     handleEdit() {
       this.onEdit(this.joke.id);
     }
-  
-  }
-  
-    
+  } 
 };
 </script>
 

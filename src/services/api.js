@@ -80,6 +80,10 @@ export default {
     return fetch(`/api/jokes/${rateId}`, getOptions('GET'))
       .then(response => response.json());
   },
+  // getMyJoke(id) {
+  //   return fetch(`/api/jokes/${id}`, getOptions('GET'))
+  //     .then(response => response.json());
+  // },
 
   deleteMyJoke(id) {
     return fetch(`/api/jokes/${id}`, getOptions('DELETE'))

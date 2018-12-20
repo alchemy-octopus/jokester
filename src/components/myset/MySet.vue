@@ -4,7 +4,9 @@
         <MySetList v-if="jokes"
           :jokes="jokes"
           :onDelete="handleDelete"
-          :onEdit="handleEdit"/>
+          :onEdit="handleEdit"
+          />
+        
     </section>
 </template>
 
@@ -39,12 +41,11 @@ export default {
           });
         });   
     },
-    handleEdit(id){
-      api.editMyJoke(id)
+    handleEdit(joke){
+      api.editMyJoke(joke)
         .then(edited => {
           this.joke.id = edited;
         });
-
     }
   }
 };
