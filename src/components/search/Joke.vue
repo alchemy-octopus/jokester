@@ -2,7 +2,12 @@
   <section>
     <li>
       {{joke.joke}}
-      <button @click="handleAdd">Add to My Set</button>
+      <div v-if="buttonShow === true">
+        <button @click="handleAdd">Add to My Set</button>
+      </div>
+      <div v-else>
+        <p>Added</p>
+      </div>
     </li>
   </section>
 </template>
@@ -13,8 +18,15 @@ export default {
   props: {
     joke: Object
   },
+  data() {
+    return {
+      buttonShow: true
+    };
+  },
   methods: {
     handleAdd() {
+      this.buttonShow = false;
+
       let searchJoke = {
         title: this.joke.joke,
         source: 'search'
@@ -24,10 +36,13 @@ export default {
           console.log('result', result);
         });
     }
+
   }
 };
 </script>
 
-<style>
-
+<style scoped>
+p {
+  font-weight: 600;
+}
 </style>
