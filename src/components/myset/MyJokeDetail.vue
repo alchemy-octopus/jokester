@@ -3,12 +3,15 @@
         <div class="display">
           <button class="close" @click="onClose">X</button>
           <p>{{joke.title}}</p>
-          <star-rating 
-            v-model="rating"
-            :star-size="10"
-            :read-only=true
-            >
-          </star-rating>
+          <div v-if="rating">
+            <star-rating 
+              v-model="rating"
+              :star-size="10"
+              :read-only=true
+              >
+            </star-rating>
+          </div>
+          <div v-else >Not yet rated.</div>
           <p>{{joke.source}}</p>
         </div>
   </div>
@@ -21,7 +24,7 @@ import api from '../../services/api';
 export default {
   data() {
     return {
-      rating: 0
+      rating: null
     };
   },
   props: {
@@ -34,8 +37,9 @@ export default {
   created() {
     api.getRatings(this.joke.id)
       .then(rating => {
-        if(this.rating)
-        {this.rating = parseInt(rating[0].rating);}
+        // if(this.rating)
+        this.rating = parseInt(rating[0].rating);
+        console.log('rating', parseInt(rating[0].rating));
       })
       .catch(err => {
         this.error = err;
