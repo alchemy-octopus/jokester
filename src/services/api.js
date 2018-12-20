@@ -65,8 +65,8 @@ export default {
       .then(response => response.json());
   },
 
-  addRating(rating) {
-    return fetch('/api/ratings', getOptions('POST', rating))
+  addRating(rated) {
+    return fetch('/api/ratings', getOptions('POST', rated))
       .then(response => response.json());
   },
 
@@ -77,7 +77,7 @@ export default {
   },
 
   getRateJokes(rateId) {
-    return fetch(`/api/jokes/${rateId}`, { headers: { Accept:'application/json' } })
+    return fetch(`/api/jokes/${rateId}`, getOptions('GET'))
       .then(response => response.json());
   },
 
