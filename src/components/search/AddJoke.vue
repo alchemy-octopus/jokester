@@ -73,6 +73,7 @@ form {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, .75);
+  z-index: 4;
 }
 
 .close {
