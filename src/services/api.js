@@ -60,8 +60,8 @@ export default {
       .then(response => response.json());
   },
   
-  getRatings() {
-    return fetch('/api/ratings/${id}', getOptions('GET'))
+  getRatings(id) {
+    return fetch(`/api/ratings/${id}`, getOptions('GET'))
       .then(response => response.json());
   },
 
