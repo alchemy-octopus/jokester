@@ -3,7 +3,8 @@
         <h3>Joke Joke Joke</h3>
         <MySetList v-if="jokes"
           :jokes="jokes"
-          :onDelete="handleDelete"/>
+          :onDelete="handleDelete"
+          :onEdit="handleEdit"/>
     </section>
 </template>
 
@@ -31,13 +32,19 @@ export default {
   },
   methods: {
     handleDelete(id){
-      console.log('banana', id);
       api.deleteMyJoke(id)
         .then(() => {
           this.jokes = this.jokes.filter(joke => {
             return joke.id !== id;
           });
         });   
+    },
+    handleEdit(id){
+      api.editMyJoke(id)
+        .then(edited => {
+          this.joke.id = edited;
+        });
+
     }
   }
 };

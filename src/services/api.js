@@ -86,6 +86,10 @@ export default {
       .then(response => response.json());
   },
 
+  editMyJoke(id) {
+    return fetch(`/api/jokes/${id}`, getOptions('PUT'))
+      .then(response => response.json());
+  },
 
   getProfiles() {
     return fetch('/api/profiles', getOptions('GET'))

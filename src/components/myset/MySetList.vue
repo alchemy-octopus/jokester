@@ -4,7 +4,8 @@
             <MyJoke v-for="joke in jokes"
                 :key="joke.id"
                 :joke="joke"
-                :onDelete="onDelete"/>
+                :onDelete="onDelete"
+                :onEdit="onEdit"/>
         </ul>
     </section>
 </template>
@@ -15,7 +16,8 @@ import MyJoke from './MyJoke';
 export default {
   props: {
     jokes: Array,
-    onDelete: Function
+    onDelete: Function,
+    onEdit: Function
   },
   components: {
     MyJoke
