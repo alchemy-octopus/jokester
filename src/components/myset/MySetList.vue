@@ -9,12 +9,8 @@
                 />
         </ul>
         
-          <!-- :joke="joke"
-           -->
-        
     </section>
 </template>
-//  :onClose="() => show = false"
 <script>
 import MyJoke from './MyJoke';
 
@@ -27,7 +23,7 @@ export default {
     onEdit: Function
   },
   components: {
-    MyJoke,
+    MyJoke
   }
 };
 </script>

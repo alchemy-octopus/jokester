@@ -44,13 +44,15 @@ export default {
     handleEdit(joke){
       api.editMyJoke(joke)
         .then(edited => {
-          this.joke.id = edited;
+          this.joke = edited;
         });
     }
   }
 };
 </script>
 
-<style>
-
+<style scoped>
+/* MySetList {
+  z-index: -1;
+} */
 </style>

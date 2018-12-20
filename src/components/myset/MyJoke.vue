@@ -33,7 +33,8 @@ export default {
       this.onDelete(this.joke.id);
     },
     handleEdit() {
-      this.onEdit(this.joke.id);
+      console.log('thisjoke', this.joke);
+      this.onEdit(this.joke);
     }
   } 
 };
