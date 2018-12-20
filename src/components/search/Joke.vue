@@ -6,7 +6,7 @@
         <button @click="handleAdd">Add to My Set</button>
       </div>
       <div v-else>
-        <p>Added</p>
+        <button disabled>Added</button>
       </div>
     </li>
   </section>
