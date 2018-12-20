@@ -8,6 +8,7 @@
         <button @click="show = true">Add A Joke</button>
         <AddJoke :onAdd="handleAdd" v-if="show" :onClose="() => show = false"/>
         <JokesList v-if="jokes" :jokes="jokes"/>
+        {{errormsg}}
     </section>
 
 </template>
@@ -24,7 +25,8 @@ export default {
       jokes: [], // needs to be null when getJokes() is here
       search: decodeURIComponent(this.$route.query.search = ''),
       showModal: false,
-      show: false
+      show: false,
+      errormsg: ''
     };
   },
   components: {
@@ -61,6 +63,9 @@ export default {
       api.getJokes(this.search)
         .then(response => {
           this.jokes = response.results;
+          if(this.jokes.length <= 0){
+            this.errormsg = 'No search results found.';
+          }
         });
     }
   }
