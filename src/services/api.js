@@ -54,13 +54,12 @@ export default {
     return fetch(`https://icanhazdadjoke.com/search?term=${searchTerm}`, { headers: { Accept:'application/json' } })
       .then(response => response.json());
   },
-  
   addJoke(joke) {
     return fetch('/api/jokes', getOptions('POST', joke))
       .then(response => response.json());
-  },
-  getRatings() {
-    return fetch('/api/ratings', getOptions('GET'))
+  }, 
+  getRatings(id) {
+    return fetch(`/api/ratings/${id}`, getOptions('GET'))
       .then(response => response.json());
   },
   addRating(rated) {
@@ -75,10 +74,6 @@ export default {
     return fetch(`/api/jokes/${rateId}`, getOptions('GET'))
       .then(response => response.json());
   },
-  // getMyJoke(id) {
-  //   return fetch(`/api/jokes/${id}`, getOptions('GET'))
-  //     .then(response => response.json());
-  // },
   deleteMyJoke(id) {
     return fetch(`/api/jokes/${id}`, getOptions('DELETE'))
       .then(response => response.json());
@@ -91,10 +86,8 @@ export default {
     return fetch('/api/profiles', getOptions('GET'))
       .then(response => response.json());
   },
-
   addSearchJoke(joke) {
     return fetch('/api/jokes', getOptions('POST', joke))
       .then(response => response.json());    
   }
-
 };
