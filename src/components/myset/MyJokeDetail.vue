@@ -4,6 +4,7 @@
           <button class="close" @click="onClose">X</button>
           <p>{{joke.title}}</p>
           <star-rating 
+            v-model="rating"
             v-bind:star-size="10"
             v-bind:read-only=true
             >
@@ -15,9 +16,14 @@
 
 <script>
 import StarRating from 'vue-star-rating';
-
+import api from '../../services/api';
 
 export default {
+  data() {
+    return {
+      rating: 0
+    };
+  },
   props: {
     joke: Object,
     onClose: Function
@@ -26,17 +32,24 @@ export default {
     StarRating
   },
   created() {
+    api.getRatings(this.joke.id)
+      .then(rating => {
+        this.rating = parseInt(rating[0].rating);
+        console.log('rating is ', parseInt(rating[0].rating));
+      })
+      .catch(err => {
+        this.error = err;
+      });
     this.documentListener = event => {
       if(event.keyCode === 27) {
         this.onClose();
       }
     };
-
     document.addEventListener('keyup', this.documentListener);
   },
   destroyed() {
     document.removeEventListener('keyup', this.documentListener);
-  }
+  },
 };
 </script>
 
