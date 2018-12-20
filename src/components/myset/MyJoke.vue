@@ -19,6 +19,7 @@ export default {
     joke: Object,
     onDelete: Function,
     onEdit: Function
+    // onClose: Function
   },
   data() {
     return {
@@ -33,7 +34,6 @@ export default {
       this.onDelete(this.joke.id);
     },
     handleEdit() {
-      console.log('thisjoke', this.joke);
       this.onEdit(this.joke);
     }
   } 

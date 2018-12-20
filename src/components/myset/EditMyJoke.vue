@@ -6,7 +6,7 @@
                <h3>Edit Your Joke</h3>
                <label>Joke</label>
                <input v-model="joke.title">
-               <button>Update Joke</button>
+               <button >Update Joke</button>
            </form>
        </div>
     </section>
@@ -18,9 +18,19 @@ export default {
     onEdit: Function,
     onClose: Function,
     joke: Object
-  },
-  
+  }
+  // created() {
+  //   this.documentListener = event => {
+  //     if(event.keyCode === 27) {
+  //       this.onClose();
+  //     }
+  //   };
 
+  //   document.addEventListener('keyup', this.documentListener);
+  // },
+  // destroyed() {
+  //   document.removeEventListener('keyup', this.documentListener);
+  // }
 };
 </script>
 
