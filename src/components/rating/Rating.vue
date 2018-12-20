@@ -2,13 +2,16 @@
     <section>
         <li>
           {{joke.title}}
-          <RateJoke/>
+          <star-rating 
+            v-bind:star-size="30"
+            @rating-selected ="setRating">
+          </star-rating>
         </li>
     </section>
 </template>
 
 <script>
-import RateJoke from './RateJoke';
+import StarRating from 'vue-star-rating';
 
 export default {
   props: {
@@ -16,8 +19,18 @@ export default {
     onRate: Function
   },
   components: {
-    RateJoke
+    StarRating
   },
+  methods: {
+    setRating: function(rating){
+      this.rating = rating;
+    }
+  },
+  data() {
+    return {
+      rating: 0
+    };
+  }
 };
 </script>
 

@@ -23,14 +23,6 @@ export default {
     RatingList
   },
   created() {
-    api.getMyJokes()
-      .then(jokes => {
-        this.jokes = jokes;
-      })
-      .catch(err => {
-        this.error = err;
-      });
-
     api.getProfiles()
       .then(profiles => {
         this.profiles = profiles;

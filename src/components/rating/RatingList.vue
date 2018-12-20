@@ -1,6 +1,5 @@
 <template>
     <section>
-        Rating list
         <ul v-if="jokes">
            <Rating v-for="joke in jokes" 
            :key="joke.id"
