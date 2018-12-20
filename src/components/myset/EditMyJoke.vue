@@ -1,44 +1,42 @@
 <template>
-    <div class="modal">
-    <form class="form" @submit.prevent="handleSubmit">
-        <button class="close" @click="onClose">X</button>
-        <h3>Add Your Own Joke</h3>
-        <p><label>Joke Text:</label></p>
-        <input autofocus v-focus v-model="joke.title" required>
-        <button>Add</button>
-    </form>
-  </div>
+    <section>
+       <div class="modal">
+           <form class="form" @submit.prevent="handleSubmit">
+               <button class="close" @click="onClose">X</button>
+               <h3>Edit Your Joke</h3>
+               <label>Joke</label>
+               <input v-model="editedJoke.title">
+               <button>Update Joke</button>
+           </form>
+       </div>
+    </section>
 </template>
 
 <script>
 
-function initJoke() {
-  return {
-    title: '',
-    source: 'custom'
-  };
-}
-
 export default {
   props: {
-    onAdd: Function,
+    joke: Object,
+    onEdit: Function,
     onClose: Function
   },
   data() {
+    const update = this.joke || {};
     return {
-      joke: initJoke()
+      editedJoke: {
+        title: update.title || '',
+        source: update.source,
+        id: update.id
+      }
     };
   },
   methods: {
     handleSubmit() {
-      this.onAdd(this.joke)
+      this.onEdit(this.joke, this.editedJoke)
         .then(() => {
-          this.joke = initJoke();
           this.onClose();
         });
-
-    },
-    
+    }
   },
   created() {
     this.documentListener = event => {
@@ -56,7 +54,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-
 form {
     background: white;
     padding: 30px;
@@ -72,24 +69,23 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, .75);
-  z-index: 4;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 10;
 }
 
 .close {
   position: absolute;
   top: 10px;
   right: 10px;
-}
+} */
 
 input, button {
   margin: 0 5px;
 }
 
-input {
+input { */
   width: 125px;
   font-size: 1.05em;
-}
+ }
+
 </style>
-
-

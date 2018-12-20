@@ -1,9 +1,9 @@
 <template>
     <section>
-        <li :joke="joke">
+        <li>
             {{joke.title}}
             <button @click="handleDelete">Remove from my set</button>
-            <button @click="handleEdit">Edit ✎</button>
+            <button @click="show = true">Edit ✎</button>
             <button @click="show = true">Details</button>
             <MyJokeDetail 
               v-if="show" 
@@ -12,10 +12,15 @@
               :onRate="handleRate"
             /> 
         </li>
+        <EditMyJoke v-if="show" :onClose="() => show = false"
+        :joke="joke"
+        :onEdit="onEdit"
+        />
     </section>
 </template>
 
 <script>
+import EditMyJoke from './EditMyJoke';
 import MyJokeDetail from './MyJokeDetail';
 import api from '../../services/api';
 
@@ -24,9 +29,16 @@ export default {
     joke: Object,
     onDelete: Function,
     onEdit: Function,
+    onClose: Function,
     onRate: Function
   },
+  data() {
+    return {
+      show: false
+    };
+  },
   components: {
+    EditMyJoke,
     MyJokeDetail
   },
   methods: {
@@ -46,13 +58,7 @@ export default {
           this.error = err;
         });
     }
-  },
-  data() {
-    return {
-      show: false
-    };
   }
-    
 };
 </script>
 

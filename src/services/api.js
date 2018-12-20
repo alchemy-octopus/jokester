@@ -54,51 +54,40 @@ export default {
     return fetch(`https://icanhazdadjoke.com/search?term=${searchTerm}`, { headers: { Accept:'application/json' } })
       .then(response => response.json());
   },
-  
   addJoke(joke) {
     return fetch('/api/jokes', getOptions('POST', joke))
       .then(response => response.json());
-  },
-  
+  }, 
   getRatings(id) {
     return fetch(`/api/ratings/${id}`, getOptions('GET'))
       .then(response => response.json());
   },
-
   addRating(rated) {
     return fetch('/api/ratings', getOptions('POST', rated))
       .then(response => response.json());
   },
-
-  //is the api different, not using token? 
   getMyJokes() {
     return fetch('/api/jokes', getOptions('GET'))
       .then(response => response.json());
   },
-
   getRateJokes(rateId) {
     return fetch(`/api/jokes/${rateId}`, getOptions('GET'))
       .then(response => response.json());
   },
-
   deleteMyJoke(id) {
     return fetch(`/api/jokes/${id}`, getOptions('DELETE'))
       .then(response => response.json());
   },
-
-  editMyJoke(id) {
-    return fetch(`/api/jokes/${id}`, getOptions('PUT'))
+  editMyJoke(joke) {
+    return fetch(`/api/jokes/${joke.id}`, getOptions('PUT', joke))
       .then(response => response.json());
   },
-
   getProfiles() {
     return fetch('/api/profiles', getOptions('GET'))
       .then(response => response.json());
   },
-
   addSearchJoke(joke) {
     return fetch('/api/jokes', getOptions('POST', joke))
       .then(response => response.json());    
   }
-
 };

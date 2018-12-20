@@ -5,11 +5,12 @@
                 :key="joke.id"
                 :joke="joke"
                 :onDelete="onDelete"
-                :onEdit="onEdit"/>
+                :onEdit="onEdit"
+                />
         </ul>
+        
     </section>
 </template>
-
 <script>
 import MyJoke from './MyJoke';
 
