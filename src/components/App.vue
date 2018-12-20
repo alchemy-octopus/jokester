@@ -15,7 +15,7 @@
     </header>
     
     <main>
-      <img alt="Vue logo" src="../assets/logo.png">
+      <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
       <RouterView v-if="user" :user="user"/>
     
       <Auth v-else
@@ -78,8 +78,11 @@ export default {
 
 <style scoped>
 header {
+  /* position: absolute;
+  left: 0;
+  width: 100vw; */
   height: 75px;
-  background: lightsteelblue;
+  background: rgb(192, 10, 10);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,13 +92,11 @@ header img {
 }
 nav a {
   text-decoration: none;
-  color: black;
+  color: gold;
   margin: 3px;
   padding: 3px;
   border: 1px solid black;
 }
-main {
-  padding: 8px;
-}
+
 </style>
   

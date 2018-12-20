@@ -1,29 +1,31 @@
 <template>
-  <section class="photos">
+  <section>
     <h1>Meet the Jokester App Team</h1>
-    <img src="">
+    <img src="https://cdn1.iconfinder.com/data/icons/mask/154/joker-mask-face-carnaval-hat-512.png" class="background">
     <div>
-      <h3>About Us</h3>
+      <h2>About Us</h2>
       <p>We are Team Octopus, a small group of up and coming developers at Alchemy
       Code Lab. We built this "Jokester" app in hopes of bringing laughter
       to your day. The jokes are punny, family friendly, and some even make 
       you laugh because they are awful. Please use our app to search for jokes,
-      you can add your own, and make a set list to impress everyone with your wit. 
+      add your own, or make a set list to impress everyone with your wit. 
       </p>
     </div>
     <div>
-      <p>Hans</p>
+      <h3>Hans</h3>
+      <img src="assets/Hans.jpg" alt="photo-of-Hans" class="pic"/>
     </div>
     <div>
-      <p>Teonna</p>
+      <h3>Teonna</h3>
+      <img src="assets/Teonna.jpg" alt="photo-of-Teonna" class="pic"/>
     </div>
-    <div id="jei">
-      <p class="names">Jei Shepherd</p>
-      <img src="images/Jei.jpeg" alt="photo-of-Jei" class="pic"/>
+    <div>
+      <h3>Jei Shepherd</h3>
+      <img src="/Jei.jpg" alt="photo-of-Jei" class="pic"/>
     </div>
-    <div id="ivan">
-      <p class="names">Ivan Poblete</p>
-      <img src="images/Ivan.jpeg" alt="photo-of-Ivan" class="pic"/>
+    <div>
+      <h3>Ivan Poblete</h3>
+      <img src="/Ivan.jpg" alt="photo-of-Ivan" class="pic"/>
     </div>
   </section>
 </template>
@@ -34,20 +36,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
     width: 100vw;
     padding-top: 100px;
     margin-left: 150px;
     margin-right: 150px;
     font-size: 1.5em;
-}
-
-.photos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center; 
 }
 
 /*pics of us*/
@@ -65,19 +60,14 @@ body {
 }
 
 /*background pic*/
-.img {
-    opacity: 0.2;
+.background {
+    opacity: .5;
     position: absolute;
     height: auto;
     width: 100vw;
     height: 180vh;
     z-index: -1;
     left: 0px;
-}
-
-.names {
-    text-align: center;
-    font-size: 1.3em;
 }
 
 </style>
