@@ -4,17 +4,15 @@
             {{joke.title}}
             <button @click="handleDelete">Remove from my set</button>
             <button @click="handleEdit">Edit ✎</button>
-            <star-rating 
-            v-bind:star-size="10"
-            v-bind:read-only=true
-            >
-          </star-rating>
+            <button @click="show = true">Details</button>
+            <MyJokeDetail :joke="joke" v-if="show" :onClose="() => show = false"/> 
         </li>
     </section>
 </template>
 
 <script>
-import StarRating from 'vue-star-rating';
+import MyJokeDetail from './MyJokeDetail';
+
 
 export default {
   props: {
@@ -23,7 +21,7 @@ export default {
     onEdit: Function
   },
   components: {
-    StarRating
+    MyJokeDetail
   },
   methods: {
     handleDelete() {
@@ -32,9 +30,12 @@ export default {
     handleEdit() {
       this.onEdit(this.joke.id);
     }
-  
+  },
+  data() {
+    return {
+      show: false
+    };
   }
-  
     
 };
 </script>

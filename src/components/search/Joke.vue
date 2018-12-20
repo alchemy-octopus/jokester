@@ -23,7 +23,8 @@ export default {
         .then(result => {
           console.log('result', result);
         });
-    }
+    },
+    
   }
 };
 </script>
