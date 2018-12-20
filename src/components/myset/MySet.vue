@@ -41,10 +41,13 @@ export default {
           });
         });   
     },
-    handleEdit(joke){
-      api.editMyJoke(joke)
+    handleEdit(old, joke){
+      const index = this.jokes.indexOf(old);
+      console.log('thisindex', index);
+      
+      return api.editMyJoke(joke)
         .then(edited => {
-          this.joke = edited;
+          this.jokes.splice(index, 1, edited);
         });
     }
   }

@@ -3,11 +3,12 @@
         <li>
             {{joke.title}}
             <button @click="handleDelete">Remove from my set</button>
-            <button @click="handleEdit => show = !show">Edit ✎</button>
+            <button @click="show = true">Edit ✎</button>
         </li>
         <EditMyJoke v-if="show" :onClose="() => show = false"
         :joke="joke"
-        :onEdit="handleEdit"/>
+        :onEdit="onEdit"
+        />
     </section>
 </template>
 
@@ -18,8 +19,8 @@ export default {
   props: {
     joke: Object,
     onDelete: Function,
-    onEdit: Function
-    // onClose: Function
+    onEdit: Function,
+    onClose: Function
   },
   data() {
     return {
@@ -32,10 +33,10 @@ export default {
   methods: {
     handleDelete() {
       this.onDelete(this.joke.id);
-    },
-    handleEdit() {
-      this.onEdit(this.joke);
     }
+    // handleEdit() {
+    //   this.onEdit(this.joke);
+    // }
   } 
 };
 </script>

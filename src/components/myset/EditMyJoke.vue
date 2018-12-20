@@ -1,36 +1,55 @@
 <template>
     <section>
        <div class="modal">
-           <form class="form" @submit.prevent="onEdit(joke)">
+           <form class="form" @submit.prevent="handleSubmit">
                <button class="close" @click="onClose">X</button>
                <h3>Edit Your Joke</h3>
                <label>Joke</label>
-               <input v-model="joke.title">
-               <button >Update Joke</button>
+               <input v-model="editedJoke.title">
+               <button>Update Joke</button>
            </form>
        </div>
     </section>
 </template>
 
 <script>
+
 export default {
   props: {
+    joke: Object,
     onEdit: Function,
-    onClose: Function,
-    joke: Object
-  }
-  // created() {
-  //   this.documentListener = event => {
-  //     if(event.keyCode === 27) {
-  //       this.onClose();
-  //     }
-  //   };
+    onClose: Function
+  },
+  data() {
+    const update = this.joke || {};
+    return {
+      editedJoke: {
+        title: update.title || '',
+        source: update.source,
+        id: update.id
+      }
+    };
+  },
+  methods: {
+    handleSubmit() {
+      this.onEdit(this.joke, this.editedJoke)
+        .then(() => {
+          this.onClose();
+        });
+    }
+  },
+  created() {
+    this.documentListener = event => {
+      if(event.keyCode === 27) {
+        this.onClose();
+      }
+    };
 
-  //   document.addEventListener('keyup', this.documentListener);
-  // },
-  // destroyed() {
-  //   document.removeEventListener('keyup', this.documentListener);
-  // }
+    document.addEventListener('keyup', this.documentListener);
+  },
+  destroyed() {
+    document.removeEventListener('keyup', this.documentListener);
+  }
 };
 </script>
 

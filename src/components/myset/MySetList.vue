@@ -14,8 +14,6 @@
 <script>
 import MyJoke from './MyJoke';
 
-
-
 export default {
   props: {
     jokes: Array,
