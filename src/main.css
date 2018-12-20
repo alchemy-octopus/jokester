@@ -1,27 +1,26 @@
-/* body {
-    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
-    margin: 0;
-  }
-  
-  * {
-    box-sizing: border-box;
-  } */
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+*{
+  box-sizing: border-box;
+}
+li {
+  border: 2px solid black;
+  list-style: none;
+  padding: 10px;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
 
-  li {
-    border: 2px solid black;
-    list-style: none;
-    padding: 10px;
-    position: relative;
-    height: 150px;
-    overflow: hidden;
-  }
-  
-  ul {
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-  }
+ul {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  align-items: stretch;
+}
