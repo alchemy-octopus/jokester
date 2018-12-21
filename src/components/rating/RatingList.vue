@@ -10,12 +10,13 @@
 
     <form @submit.prevent="onEdit(selectedUser)">
         <h2>Rate Other Jokester's Jokes</h2>
+        <label>
         <span>Select a User: </span>
           <select v-if="profiles"
             v-model="selectedUser"
             required
           >
-            <option value="-1" disabled>Select a User</option>
+            <option value="-1" disabled selected>Select a User</option>
             <option v-for="profile in profiles"
               :key="profile.id"
               :value="profile.id"
@@ -23,6 +24,7 @@
             {{profile.username}}
             </option>          
           </select>
+        </label>
           <button type="submit">Select</button>
       </form>
     </section>
@@ -35,7 +37,7 @@ import Rating from './Rating';
 export default {
   data() {
     return {
-      selectedUser: null
+      selectedUser: -1
     };
   },
   props: {
@@ -55,5 +57,6 @@ export default {
 </script>
 
 <style>
+
 
 </style>
