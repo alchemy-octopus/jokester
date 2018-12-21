@@ -3,10 +3,10 @@
     <li>
       {{joke.joke}}
       <div v-if="buttonShow === true">
-        <button @click="handleAdd">Add to My Set</button>
+        <button class="add-button" @click="handleAdd">Add to My Set</button>
       </div>
       <div v-else>
-        <button disabled>Added</button>
+        <button class="disabled" disabled>Added</button>
       </div>
     </li>
   </section>
@@ -28,7 +28,7 @@ export default {
       this.buttonShow = false;
       let searchJoke = {
         title: this.joke.joke,
-        source: 'search'
+        source: 'found with search'
       };
       api.addSearchJoke(searchJoke)
         .then(result => {
@@ -43,4 +43,22 @@ export default {
 p {
   font-weight: 600;
 }
+
+.add-button {
+  margin-top: 10px;
+  bottom: 5px;
+}
+
+li {
+  background: #FFC75F;
+  border-radius: 5px;
+}
+
+.disabled {
+  background: lightgray;
+  margin-top: 10px;
+  bottom: 5px;
+  box-shadow: none;
+}
+
 </style>

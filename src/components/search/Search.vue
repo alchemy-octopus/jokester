@@ -5,7 +5,7 @@
       <audio src="./laughing.mp3" autoplay></audio>
         <form @submit.prevent="handleSubmit">
           <input v-model="keyword" required>
-          <button>Search</button>
+          <button class="search-button">Search</button>
         </form>
       </div>
   </section>
@@ -43,5 +43,13 @@ export default {
 </script>
 
 <style>
+
+input {
+  margin-right: 10px;
+}
+
+.search-button {
+  margin-bottom: 30px;
+}
 
 </style>

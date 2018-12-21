@@ -1,10 +1,12 @@
 <template>
     <section>
-        <li>
-            {{joke.title}}
-            <button @click="handleDelete">Remove from my set</button>
-            <button @click="editShow = true">Edit ✎</button>
-            <button @click="detailShow = true">Details</button>
+        <li class="myJoke">
+            <p class=jokeTitle>{{joke.title}}</p>
+            <div class="buttons">
+              <button @click="handleDelete">Remove</button>
+              <button @click="editShow = true">Edit ✎</button>
+              <button @click="detailShow = true">Details</button>
+            </div>
             <MyJokeDetail 
               v-if="detailShow" 
               :onClose="() => detailShow = false" 
@@ -64,6 +66,24 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+  .myJoke {
+    display: flex;
+    flex-direction: column;
+    background: #FFC75F;
+    border-radius: 5px;
+  }
+  .jokeTitle {
+    margin-bottom: 20px;
+  }
+
+  button {
+    margin: 5px 5px;
+    width: 50%;
+  }
+
+  .buttons {
+    text-align: center;
+  }
 
 </style>

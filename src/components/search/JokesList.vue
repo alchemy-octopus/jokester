@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h3>Search Results:</h3>
     <ul>
       <Joke v-for="joke in jokes"
         :key="joke.id"
