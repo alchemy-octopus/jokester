@@ -2,6 +2,7 @@
   <section>
     <div>
       <h2>Search for a Joke</h2>
+      <audio src="./laughing.mp3" autoplay></audio>
         <form @submit.prevent="handleSubmit">
           <input v-model="keyword" required>
           <button class="search-button">Search</button>
