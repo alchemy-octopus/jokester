@@ -9,7 +9,7 @@
       </p>
     </div>
     
-    <section id="us">
+    <section class="us">
     <div>
       <h3>Hans Janowitz</h3>
       <img src="/Hans.jpg" alt="photo-of-Hans" class="pic"/>
@@ -69,13 +69,13 @@ export default {};
   align-items: stretch;
   margin: 10px;
 }
-.body {
+/* .body {
     width: 100vw;
     padding-top: 100px;
     margin-left: 150px;
     margin-right: 150px;
     font-size: 1.5em;
-}
+} */
 
 /*pics of us*/
 .pic {
