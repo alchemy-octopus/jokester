@@ -3,9 +3,9 @@
 
       <div>
       </div>
-      <h1>This is a heading</h1>
+      <h1></h1>
         <Search :search="search"/>
-        <button @click="show = true">Add A Joke</button>
+        <button @click="show = true">Add Your Own Joke</button>
         <AddJoke :onAdd="handleAdd" v-if="show" :onClose="() => show = false"/>
         <JokesList v-if="jokes" :jokes="jokes"/>
     </section>

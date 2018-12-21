@@ -9,8 +9,8 @@
         </ul>
 
     <form @submit.prevent="onEdit(selectedUser)">
-        <h2>Rate Other User's Jokes</h2>
-        <span>Other Sets: </span>
+        <h2>Rate Other Jokester's Jokes</h2>
+        <span>Select a User: </span>
           <select v-if="profiles"
             v-model="selectedUser"
             required
