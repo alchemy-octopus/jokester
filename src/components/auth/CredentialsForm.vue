@@ -1,11 +1,11 @@
  <template>
    <form @submit.prevent="onSubmit(profile)">
      <label>
-       Username:
+       Username: 
        <input v-model="profile.username" required>
      </label>
      <label>
-       Password:
+       Password: 
        <input :type="showPassword ? 'text' : 'password'" v-model="profile.password" required>
        <button type="button" @click="showPassword = !showPassword">
          {{ showPassword ? 'Hide' : 'Show' }}
@@ -44,6 +44,11 @@ export default {
  
  pre {
    color: red;
+ }
+
+ input {
+   margin-left: 5px;
+   box-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
  }
  
  </style>
