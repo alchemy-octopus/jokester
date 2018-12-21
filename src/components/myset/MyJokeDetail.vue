@@ -44,9 +44,7 @@ export default {
   created() {
     api.getRatings(this.joke.id)
       .then(rating => {
-        // if(this.rating)
         this.rating = parseInt(rating[0].rating);
-        console.log('rating', parseInt(rating[0].rating));
       })
       .catch(err => {
         this.error = err;
