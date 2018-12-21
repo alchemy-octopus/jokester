@@ -6,7 +6,6 @@
           :onDelete="handleDelete"
           :onEdit="handleEdit"
           />
-        
     </section>
 </template>
 
@@ -43,8 +42,6 @@ export default {
     },
     handleEdit(old, joke){
       const index = this.jokes.indexOf(old);
-      console.log('thisindex', index);
-      
       return api.editMyJoke(joke)
         .then(edited => {
           this.jokes.splice(index, 1, edited);
@@ -55,7 +52,5 @@ export default {
 </script>
 
 <style scoped>
-/* MySetList {
-  z-index: -1;
-} */
+
 </style>

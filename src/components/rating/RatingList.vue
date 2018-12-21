@@ -48,11 +48,7 @@ export default {
   },
   methods: {
     handleRate(rated) {
-      api.addRating(rated)
-      // .then(result => {
-          
-      // })
-      ;
+      api.addRating(rated);
     } 
   }
 };

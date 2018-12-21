@@ -44,7 +44,6 @@ export default {
         this.onClose();
       }
     };
-
     document.addEventListener('keyup', this.documentListener);
   },
   destroyed() {

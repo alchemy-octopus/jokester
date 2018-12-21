@@ -6,7 +6,7 @@
         <button @click="handleAdd">Add to My Set</button>
       </div>
       <div v-else>
-        <p>Added</p>
+        <button disabled>Added</button>
       </div>
     </li>
   </section>
@@ -26,14 +26,13 @@ export default {
   methods: {
     handleAdd() {
       this.buttonShow = false;
-
       let searchJoke = {
         title: this.joke.joke,
         source: 'search'
       };
       api.addSearchJoke(searchJoke)
         .then(result => {
-          console.log('result', result);
+          this.result = result;
         });
     }
   }
