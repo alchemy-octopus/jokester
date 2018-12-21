@@ -1,29 +1,18 @@
-# project-app
+# JOKESTER APP
+## Contributors
+* Hans Janowitz
+* Ivan Poblete
+* Jei Shepherd
+* Teonna Zaragoza
 
-## Project setup
-```
-npm install
-```
+## Purpose
+* Create a set list of your own.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## How to use
+* Search and add new jokes to your set list. You can rate other user's jokes too!
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## How to run
+https://octopus-jokester.herokuapp.com/#/
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Special Thanks
+* To our wonderful TAs: Kevin, Injoong, Mariah, and Sarah!
