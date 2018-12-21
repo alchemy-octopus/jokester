@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
 
 body {
   font-family: 'Ubuntu', sans-serif;
   margin: 0;
   overflow-x: hidden;
-  background: whitesmoke;
+  /* background: whitesmoke; */
+  background: #F9F871;
 }
 *{
   box-sizing: border-box;
@@ -44,5 +46,5 @@ button {
  }
 
 button:hover {
-  box-shadow: 0 6px 6px 0 rgba(0,0,0,0.5), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 6px 6px 0 rgba(0,0,0,0.5), 0 10px 10px 0 rgba(0,0,0,0.19);
  }

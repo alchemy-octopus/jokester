@@ -1,15 +1,19 @@
 <template>
+  <div>
     <section>
-        <div class="add">
+      <div class="add">
+        <div>
           <AddJoke :onAdd="handleAdd" v-if="show" :onClose="() => show = false"/>
-          <button @click="show = true">Add Your Own Joke</button>
+          <button class="addButton" @click="show = true">Add Your Own Joke</button>
         </div>
         <div class="search">
           <Search :search="search"/>
           <JokesList v-if="jokes" :jokes="jokes"/>
           <p class="errormsg">{{errormsg}}</p>
         </div>
+      </div>
     </section>
+  </div>
 </template>
 
 <script>
@@ -73,6 +77,20 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.add {
+  border: 1px solid black;
+  margin: 30px;
+  padding: 40px 100px;
+  background: white;
+  border-radius: 5px;
+  max-width: 1000px;
+}
+
+.addButton {
+  background: #FFC75F;
+  font-size: 1em;
 }
 
 </style>

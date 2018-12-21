@@ -1,4 +1,5 @@
 <template>
+  <transition name="fade">
     <div class="modal">
         <div class="display">
           <button class="close" @click="onClose">X</button>
@@ -9,13 +10,18 @@
               v-model="rating"
               :star-size="20"
               :read-only=true
+              inactive-color="#DDD"
+              active-color="#FF6F91"
+              border-color="#000"
+              :border-width="1"
               >
             </star-rating>
           </div>
-          <div class="rated" v-else >Not yet rated.</div>
+          <div class="rated" v-else >(Not yet rated)</div>
           <p class="source">{{joke.source}}</p>
         </div>
-  </div>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -68,7 +74,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, .75);
+  background-color: rgba(214, 93, 177, .75);
   z-index: 4;
 }
 
@@ -109,6 +115,17 @@ input {
   border: 2px solid black;
   padding: 5px;
   font-size: .9em;
+  border-radius: 5px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 1s;
+  background: rgba(214, 93, 177, .75);
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  background: rgba(214, 93, 177, .75);
 }
 
 </style>

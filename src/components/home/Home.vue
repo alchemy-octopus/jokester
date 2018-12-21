@@ -1,7 +1,7 @@
  <template>
   <section>
     <h2>How to use our App</h2>
-      <div>
+      <div class="intro">
         <p>From this page you can select "Jokes" to search through our library
          of jokes or you can add your own.</p>
         <p>Go to "My Set" to see the jokes that you added.</p>
@@ -34,6 +34,11 @@ section {
 div {
   padding: 20px;
   border: 1px solid black;
+}
+
+.intro {
+  background: white;
+  border-radius: 5px;
 }
 
 </style>

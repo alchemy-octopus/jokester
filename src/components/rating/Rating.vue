@@ -4,7 +4,11 @@
           <div class="rating">
             <star-rating 
              :star-size="25"
-              @rating-selected="setRating">
+             inactive-color="#DDD"
+             active-color="#FF6F91"
+             border-color="#000"
+             :border-width="1"
+             @rating-selected="setRating">
             </star-rating>
           </div>
           {{joke.title}}
@@ -41,8 +45,14 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   .rating {
     margin-bottom: 10px;
   }
+
+  li {
+    background: #FFC75F;
+    border-radius: 5px;
+  }
+
 </style>

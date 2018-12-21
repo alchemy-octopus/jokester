@@ -2,8 +2,8 @@
   <div id="app">
     <header>
         <img class="logo" src="/logo.png">
-      <h1>Welcome to the Jokester App!</h1>
-      <span v-if="user">
+      <h1>Jokester</h1>
+      <span class="hello" v-if="user">
         Hello {{user.username}}!
       </span>
       <nav v-if="user">
@@ -77,9 +77,15 @@ export default {
 </script>
 
 <style scoped>
+
 h1 {
   margin: 10px;
   color: #FF6F91;
+  text-shadow: 3px 3px black;
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: .2em;
+  font-size: 3.5em;
+  padding-top: 15px;
 }
 
 header {
@@ -91,18 +97,25 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 3px 3px 5px;
+}
+
+nav {
+  margin-right: 20px;
 }
 
 nav a {
   text-decoration: none;
-  color: #FF9671;
+  color: black;
   margin: 3px;
   padding: 8px;
   border: 1px solid black;
   border-radius: 5px;
+  background: #D65DB1;
 }
 nav a:hover {
   color: lightgrey;
+  border: 2px solid #F9F871;
 }
 
 .logo {
@@ -110,6 +123,10 @@ nav a:hover {
   width: 120px;
   -webkit-filter: drop-shadow(20px 20px 20px black);
   filter: drop-shadow(10px 10px 10px black);
+}
+
+.hello {
+  color: #F9F871;
 }
 
 </style>
