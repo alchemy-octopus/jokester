@@ -1,11 +1,13 @@
 <template>
     <section>
         <li>
+          <div class="rating">
+            <star-rating 
+             :star-size="25"
+              @rating-selected="setRating">
+            </star-rating>
+          </div>
           {{joke.title}}
-          <star-rating 
-            :star-size="30"
-            @rating-selected="setRating">
-          </star-rating>
         </li>
     </section>
 </template>
@@ -40,5 +42,7 @@ export default {
 </script>
 
 <style>
-
+  .rating {
+    margin-bottom: 10px;
+  }
 </style>

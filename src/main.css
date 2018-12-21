@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 body {
+  font-family: 'Ubuntu', sans-serif;
   margin: 0;
   overflow-x: hidden;
+  background: whitesmoke;
 }
 *{
   box-sizing: border-box;
@@ -12,6 +16,7 @@ li {
   position: relative;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 ul {
@@ -23,4 +28,21 @@ ul {
   padding: 0;
   overflow-y: auto;
   align-items: stretch;
+  margin: 10px;
 }
+
+button {
+  background-color: white;
+  border: 1px solid;
+  color: black;
+  padding: 4px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 5px;
+ }
+
+button:hover {
+  box-shadow: 0 6px 6px 0 rgba(0,0,0,0.5), 0 17px 50px 0 rgba(0,0,0,0.19);
+ }

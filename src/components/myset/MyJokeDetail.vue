@@ -2,17 +2,18 @@
     <div class="modal">
         <div class="display">
           <button class="close" @click="onClose">X</button>
-          <p>{{joke.title}}</p>
+          <p class="jokeTitle">{{joke.title}}</p>
+          <hr width="50%">
           <div v-if="rating">
             <star-rating 
               v-model="rating"
-              :star-size="10"
+              :star-size="20"
               :read-only=true
               >
             </star-rating>
           </div>
-          <div v-else >Not yet rated.</div>
-          <p>{{joke.source}}</p>
+          <div class="rated" v-else >Not yet rated.</div>
+          <p class="source">{{joke.source}}</p>
         </div>
   </div>
 </template>
@@ -79,8 +80,11 @@ export default {
 .display {
   position: relative;
   width: 400px;
-  height: 400px;
+  height: auto;
   background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input, button {
@@ -91,6 +95,22 @@ input {
   width: 125px;
   font-size: 1.05em;
 }
+.jokeTitle {
+  padding: 20px 10px;
+  margin: 20px;
+}
+
+.rated {
+  font-size: .75em;
+}
+
+.source {
+  background: #FFC75F;
+  border: 2px solid black;
+  padding: 5px;
+  font-size: .9em;
+}
+
 </style>
 
 

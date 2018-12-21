@@ -4,9 +4,8 @@
            <form class="form" @submit.prevent="handleSubmit">
                <button class="close" @click="onClose">X</button>
                <h3>Edit Your Joke</h3>
-               <label>Joke</label>
-               <input v-model="editedJoke.title">
-               <button>Update Joke</button>
+               <textarea rows="5" v-model="editedJoke.title"></textarea>
+               <p><button>Update Joke</button></p>
            </form>
        </div>
     </section>

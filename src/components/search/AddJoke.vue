@@ -4,8 +4,8 @@
         <button class="close" @click="onClose">X</button>
         <h3>Add Your Own Joke</h3>
         <p><label>Joke Text:</label></p>
-        <input autofocus v-focus v-model="joke.title" required>
-        <button>Add</button>
+        <textarea rows="5" autofocus v-focus v-model="joke.title" required></textarea>
+        <button class="add">Add</button>
     </form>
   </div>
 </template>
@@ -15,7 +15,7 @@
 function initJoke() {
   return {
     title: '',
-    source: 'custom'
+    source: 'your creation'
   };
 }
 
@@ -86,6 +86,10 @@ input, button {
 input {
   width: 125px;
   font-size: 1.05em;
+}
+
+.add {
+  margin-left: 10px;
 }
 </style>
 

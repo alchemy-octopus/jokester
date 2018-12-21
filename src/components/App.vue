@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <header>
+        <img class="logo" src="/logo.png">
       <h1>Welcome to the Jokester App!</h1>
       <span v-if="user">
         Hello {{user.username}}!
@@ -76,25 +77,39 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  margin: 10px;
+  color: #FF6F91;
+}
+
 header {
   /* position: absolute;
   left: 0;
   width: 100vw; */
-  height: 75px;
-  background: rgb(192, 10, 10);
+  height: 90px;
+  background:#845EC2;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-header img {
-  height: 100%;
-}
+
 nav a {
   text-decoration: none;
-  color: gold;
+  color: #FF9671;
   margin: 3px;
-  padding: 3px;
+  padding: 8px;
   border: 1px solid black;
+  border-radius: 5px;
+}
+nav a:hover {
+  color: lightgrey;
+}
+
+.logo {
+  margin: 20px;
+  width: 120px;
+  -webkit-filter: drop-shadow(20px 20px 20px black);
+  filter: drop-shadow(10px 10px 10px black);
 }
 
 </style>

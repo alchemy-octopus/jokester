@@ -1,10 +1,14 @@
 <template>
     <section>
-        <Search :search="search"/>
-        <button @click="show = true">Add Your Own Joke</button>
-        <AddJoke :onAdd="handleAdd" v-if="show" :onClose="() => show = false"/>
-        <JokesList v-if="jokes" :jokes="jokes"/>
-        <p class="errormsg">{{errormsg}}</p>
+        <div class="add">
+          <AddJoke :onAdd="handleAdd" v-if="show" :onClose="() => show = false"/>
+          <button @click="show = true">Add Your Own Joke</button>
+        </div>
+        <div class="search">
+          <Search :search="search"/>
+          <JokesList v-if="jokes" :jokes="jokes"/>
+          <p class="errormsg">{{errormsg}}</p>
+        </div>
     </section>
 </template>
 
@@ -60,8 +64,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   button {
     margin: 20px;
   }
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 </style>

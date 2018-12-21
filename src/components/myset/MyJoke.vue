@@ -1,7 +1,7 @@
 <template>
     <section>
-        <li>
-            {{joke.title}}
+        <li class="myJoke">
+            <p class=jokeTitle>{{joke.title}}</p>
             <button @click="handleDelete">Remove from my set</button>
             <button @click="editShow = true">Edit ✎</button>
             <button @click="detailShow = true">Details</button>
@@ -64,6 +64,17 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+  .myJoke {
+    display: flex;
+    flex-direction: column;
+  }
+  .jokeTitle {
+    margin-bottom: 20px;
+  }
+
+  button {
+    margin: 5px 5px;
+  }
 
 </style>

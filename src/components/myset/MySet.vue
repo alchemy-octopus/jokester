@@ -1,6 +1,6 @@
 <template>
     <section>
-        <h3>My Set:</h3>
+        <span class="mySet"><h2>My Set List</h2></span>
         <MySetList v-if="jokes"
           :jokes="jokes"
           :onDelete="handleDelete"
@@ -52,5 +52,7 @@ export default {
 </script>
 
 <style scoped>
-
+  .mySet {
+    text-align: center;
+  }
 </style>
