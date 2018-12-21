@@ -26,7 +26,6 @@ export default {
     api.getProfiles()
       .then(profiles => {
         this.profiles = profiles;
-        console.log('profiles is ', profiles);
       })
       .catch(err => {
         this.error = err;
@@ -40,10 +39,6 @@ export default {
         });
     } 
   }
-
-
-  //need to add methods section with rating function
-
 };
 </script>
 

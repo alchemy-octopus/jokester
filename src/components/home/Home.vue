@@ -9,19 +9,8 @@
 </template>
 
 <script>
-// import api from '../../services/api';
 
 export default {
-  // data() {
-  //   return {
-  //     jokes: null
-  //   };
-  // },
-  // created() {
-  //   restaurantApi.getAll()
-  //     .then(restaurants => this.restaurants = restaurants);
-  // }
-
 
 };
 </script>

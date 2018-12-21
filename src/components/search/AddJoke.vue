@@ -36,9 +36,7 @@ export default {
           this.joke = initJoke();
           this.onClose();
         });
-
     },
-    
   },
   created() {
     this.documentListener = event => {
@@ -46,7 +44,6 @@ export default {
         this.onClose();
       }
     };
-
     document.addEventListener('keyup', this.documentListener);
   },
   destroyed() {

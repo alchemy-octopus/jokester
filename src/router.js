@@ -6,7 +6,6 @@ import Ratings from './components/rating/Ratings';
 import About from './components/about/About';
 
 export default new VueRouter({
-  // mode: 'history',
   routes: [
     { path: '/', component: Home },
     { path: '/search', component: Jokes },
