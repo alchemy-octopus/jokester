@@ -9,7 +9,7 @@
       </p>
     </div>
     
-    <div id="us">
+    <section id="us">
     <div>
       <h3>Hans Janowitz</h3>
       <img src="/Hans.jpg" alt="photo-of-Hans" class="pic"/>
@@ -43,7 +43,7 @@
         camping, beer, and hiking.
       </p>
     </div>
-    </div>
+    </section>
   </section>
 </template>
 
@@ -53,12 +53,21 @@ export default {};
 
 <style scoped>
 .us {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   grid-column-gap: 35px;
   grid-row-gap: 15px;
   list-style-type: none;
+  padding: 0; */
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  list-style-type: none;
+  margin: 0;
   padding: 0;
+  overflow-y: auto;
+  align-items: stretch;
+  margin: 10px;
 }
 .body {
     width: 100vw;
