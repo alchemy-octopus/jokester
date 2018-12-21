@@ -13,7 +13,7 @@
     <div>
       <h3>Hans Janowitz</h3>
       <img src="/Hans.jpg" alt="photo-of-Hans" class="pic"/>
-      <a href="https://github.com/PDXCrow">Hans's GitHub</a>
+      <p><a href="https://github.com/PDXCrow">Hans's GitHub</a></p>
       <p>Hans works at a creative agency in Portland, OR. He enjoys spending
         time with his family and cycling in the area.
       </p>
@@ -21,7 +21,7 @@
     <div>
       <h3>Teonna Zaragoza</h3>
       <img src="/Teonna.jpg" alt="photo-of-Teonna" class="pic"/>
-      <a href="https://github.com/tmzaragoza">Teonna's GitHub</a>
+      <p><a href="https://github.com/tmzaragoza">Teonna's GitHub</a></p>
       <p>Teonna was previously a nurse. She enjoys the great outdoors
         and spending time with her cats.
       </p>
@@ -29,7 +29,7 @@
     <div>
       <h3>Jei Shepherd</h3>
       <img src="/Jei.jpg" alt="photo-of-Jei" class="pic"/>
-      <a href="https://github.com/JeiWolfei">Jei's GitHub</a>
+     <p> <a href="https://github.com/JeiWolfei">Jei's GitHub</a></p>
       <p>Jei spent over twenty years as a teacher and social worker and is
         excited about a new career in technology.
       </p>
@@ -37,7 +37,7 @@
     <div>
       <h3>Ivan Poblete</h3>
       <img src="/Ivan.jpg" alt="photo-of-Ivan" class="pic"/>
-      <a href="https://github.com/ipoblete">Ivan's GitHub</a>
+     <p> <a href="https://github.com/ipoblete">Ivan's GitHub</a></p>
       <p>Ivan spent over a decade in the automotive industry.
         He loves spending time with his family. He also loves
         camping, beer, and hiking.
@@ -77,6 +77,11 @@ export default {};
     font-size: 1.5em;
 } */
 
+h1 {
+  margin: 20px;
+  padding-top:30px;
+}
+
 /*pics of us*/
 .pic {
     width: 250px;
@@ -101,4 +106,22 @@ export default {};
     z-index: -1;
     left: 0px;
 }
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: purple;
+}
+
+h2 {
+  padding: 20px;
+}
+
+p {
+  padding: 20px;
+}
+
+
 </style>
