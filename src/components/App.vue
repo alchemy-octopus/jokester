@@ -85,6 +85,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  justify-content: 
 }
 header img {
   height: 100%;
