@@ -8,7 +8,7 @@
       Code Lab. We built this "Jokester" app in hopes of bringing laughter
       to your day. The jokes are punny, family friendly, and some even make 
       you laugh because they are awful. Please use our app to search for jokes,
-      add your own, or make a set list to impress everyone with your wit. 
+      add your own, rate jokes, or make a set list to impress everyone with your wit. 
       </p>
     </div>
     <div>

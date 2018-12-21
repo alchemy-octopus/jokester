@@ -1,15 +1,16 @@
 <template>
   <div id="app">
     <header>
+      <h1>Welcome to the Jokester App!</h1>
       <span v-if="user">
         Hello {{user.username}}!
       </span>
       <nav v-if="user">
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/search">Search</RouterLink>
+        <RouterLink to="/search">Jokes</RouterLink>
         <RouterLink to="/myset">My Set</RouterLink>
         <RouterLink to="/ratings">Ratings</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/about">About Us</RouterLink>
         <a href="#" @click="handleLogout">Logout</a>
       </nav>
     </header>

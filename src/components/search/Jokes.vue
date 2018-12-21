@@ -1,7 +1,7 @@
 <template>
     <section>
         <Search :search="search"/>
-        <button @click="show = true">Add A Joke</button>
+        <button @click="show = true">Add Your Own Joke</button>
         <AddJoke :onAdd="handleAdd" v-if="show" :onClose="() => show = false"/>
         <JokesList v-if="jokes" :jokes="jokes"/>
         <p class="errormsg">{{errormsg}}</p>

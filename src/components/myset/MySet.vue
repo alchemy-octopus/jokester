@@ -1,6 +1,6 @@
 <template>
     <section>
-        <h3>Joke Joke Joke</h3>
+        <h3>My Set:</h3>
         <MySetList v-if="jokes"
           :jokes="jokes"
           :onDelete="handleDelete"
