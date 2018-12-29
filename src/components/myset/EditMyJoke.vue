@@ -1,14 +1,15 @@
 <template>
-      <transition name="fade">
-       <div class="modal">
-           <form class="form" @submit.prevent="handleSubmit">
-               <button class="close" @click="onClose">X</button>
-               <h3>Edit Your Joke</h3>
-               <textarea rows="5" v-model="editedJoke.title"></textarea>
-               <p><button>Update Joke</button></p>
-           </form>
-       </div>
-      </transition>
+  <transition name="fade">
+    <div class="modal">
+      <!-- better to put this outside the form -->
+      <button class="close" @click="onClose">X</button>
+      <form class="form" @submit.prevent="handleSubmit">
+        <h3>Edit Your Joke</h3>
+        <textarea rows="5" v-model="editedJoke.title"></textarea>
+        <p><button>Update Joke</button></p>
+      </form>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -92,7 +93,7 @@ input { */
   background: rgba(214, 93, 177, .75);
 }
 
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
   background: rgba(214, 93, 177, .75);
 }

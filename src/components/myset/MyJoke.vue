@@ -1,26 +1,27 @@
 <template>
+  <!-- top level should be the <li> within the <ul> -->
+  <li class="myJoke">
     <section>
-        <li class="myJoke">
-            <p class=jokeTitle>{{joke.title}}</p>
-            <div class="buttons">
-              <button @click="handleDelete">Remove</button>
-              <button @click="editShow = true">Edit ✎</button>
-              <button @click="detailShow = true">Details</button>
-            </div>
-            <MyJokeDetail 
-              v-if="detailShow" 
-              :onClose="() => detailShow = false" 
-              :joke="joke"
-              :onRate="handleRate"
-            /> 
-        </li>
-        <EditMyJoke 
-        v-if="editShow" 
-        :onClose="() => editShow = false"
+      <p class=jokeTitle>{{joke.title}}</p>
+      <div class="buttons">
+        <button @click="handleDelete">Remove</button>
+        <button @click="editShow = true">Edit ✎</button>
+        <button @click="detailShow = true">Details</button>
+      </div>
+      <MyJokeDetail 
+        v-if="detailShow" 
+        :onClose="() => detailShow = false" 
         :joke="joke"
-        :onEdit="onEdit"
-        />
+        :onRate="handleRate"
+      /> 
     </section>
+    <EditMyJoke 
+    v-if="editShow" 
+    :onClose="() => editShow = false"
+    :joke="joke"
+    :onEdit="onEdit"
+    />
+  </li>
 </template>
 
 <script>

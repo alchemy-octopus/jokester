@@ -1,25 +1,25 @@
 <template>
   <transition name="fade">
     <div class="modal">
-        <div class="display">
-          <button class="close" @click="onClose">X</button>
-          <p class="jokeTitle">{{joke.title}}</p>
-          <hr width="50%">
-          <div v-if="rating">
-            <star-rating 
-              v-model="rating"
-              :star-size="20"
-              :read-only=true
-              inactive-color="#DDD"
-              active-color="#FF6F91"
-              border-color="#000"
-              :border-width="1"
-              >
-            </star-rating>
-          </div>
-          <div class="rated" v-else >(Not yet rated)</div>
-          <p class="source">{{joke.source}}</p>
+      <div class="display">
+        <button class="close" @click="onClose">X</button>
+        <p class="jokeTitle">{{joke.title}}</p>
+        <hr width="50%">
+        <div v-if="rating">
+          <star-rating 
+            v-model="rating"
+            :star-size="20"
+            :read-only=true
+            inactive-color="#DDD"
+            active-color="#FF6F91"
+            border-color="#000"
+            :border-width="1"
+            >
+          </star-rating>
         </div>
+        <div class="rated" v-else >(Not yet rated)</div>
+        <p class="source">{{joke.source}}</p>
+      </div>
     </div>
   </transition>
 </template>

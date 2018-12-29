@@ -2,16 +2,17 @@
     <section>
       <audio src="./crowdcheer.mp3" autoplay></audio>
 
-        <ul v-if="jokes">
-            <MyJoke v-for="joke in jokes"
-                :key="joke.id"
-                :joke="joke"
-                :onDelete="onDelete"
-                :onEdit="onEdit"
-                />
-        </ul>
+      <ul v-if="jokes">
+        <MyJoke v-for="joke in jokes"
+            :key="joke.id"
+            :joke="joke"
+            :onDelete="onDelete"
+            :onEdit="onEdit"
+            />
+      </ul>
     </section>
 </template>
+
 <script>
 import MyJoke from './MyJoke';
 

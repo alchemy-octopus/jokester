@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-        <img class="logo" src="/logo.png">
+      <img class="logo" src="/logo.png">
       <h1>Jokester</h1>
       <span class="hello" v-if="user">
         Hello {{user.username}}!
@@ -113,6 +113,7 @@ nav a {
   border-radius: 5px;
   background: #D65DB1;
 }
+
 nav a:hover {
   color: lightgrey;
   border: 2px solid #F9F871;

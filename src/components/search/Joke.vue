@@ -2,12 +2,8 @@
   <section>
     <li>
       {{joke.joke}}
-      <div v-if="buttonShow === true">
-        <button class="add-button" @click="handleAdd">Add to My Set</button>
-      </div>
-      <div v-else>
-        <button class="disabled" disabled>Added</button>
-      </div>
+      <button v-if="buttonShow === true" class="add-button" @click="handleAdd">Add to My Set</button>
+      <button v-else class="disabled" disabled>Added</button>
     </li>
   </section>
 </template>
@@ -26,10 +22,12 @@ export default {
   methods: {
     handleAdd() {
       this.buttonShow = false;
+
       let searchJoke = {
         title: this.joke.joke,
         source: 'found with search'
       };
+      
       api.addSearchJoke(searchJoke)
         .then(result => {
           this.result = result;

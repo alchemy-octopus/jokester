@@ -7,7 +7,6 @@
         <p>Go to "My Set" to see the jokes that you added.</p>
         <P>In "Ratings" you can rate other users jokes.</p>
       </div>
-    <!-- <img src= "http://jesterlarf.com/wp-content/uploads/2016/10/stage.jpg"> -->
   </section>
 </template>
 
