@@ -8,7 +8,7 @@
         <textarea rows="5" autofocus v-focus v-model="joke.title" required></textarea>
         <button class="add">Add</button>
     </form>
-  </div>
+    </div>
   </transition>
 </template>
 

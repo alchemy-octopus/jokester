@@ -21,6 +21,7 @@
           <button type="submit">Select</button>
         </div>
       </form>
+
       <ul v-if="jokes">
           <Rating v-for="joke in jokes"
           :onRate="handleRate" 
@@ -28,6 +29,7 @@
           :joke="joke"
           />
       </ul>
+      
     </section>
 </template>
 

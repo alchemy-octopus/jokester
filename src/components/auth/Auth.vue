@@ -65,17 +65,17 @@ label {
   display: block;
   padding: 10px 0;
 }
+
 pre {
   color: red;
 }
+
 section {
   margin: auto;
   width: 40%;
   color: gray;
 }
-body {
-  
-}
+
 .sign {
   margin: auto;
   padding-left: 30px;

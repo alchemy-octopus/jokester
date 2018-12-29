@@ -1,12 +1,10 @@
 <template>
-  <section>
-    <ul>
-      <Joke v-for="joke in jokes"
-        :key="joke.id"
-        :joke="joke"
-        />
-    </ul>
-  </section>  
+  <ul>
+    <Joke v-for="joke in jokes"
+      :key="joke.id"
+      :joke="joke"
+      />
+  </ul>
 </template>
 
 <script>

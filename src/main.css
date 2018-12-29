@@ -8,9 +8,11 @@ body {
   /* background: whitesmoke; */
   background: #F9F871;
 }
-*{
+
+* {
   box-sizing: border-box;
 }
+
 li {
   border: 2px solid black;
   list-style: none;
@@ -43,8 +45,8 @@ button {
   display: inline-block;
   font-size: 12px;
   border-radius: 5px;
- }
+}
 
 button:hover {
   box-shadow: 0 6px 6px 0 rgba(0,0,0,0.5), 0 10px 10px 0 rgba(0,0,0,0.19);
- }
+}

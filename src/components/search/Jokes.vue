@@ -1,19 +1,15 @@
 <template>
-  <div>
-    <section>
-      <div class="add">
-        <div>
-          <AddJoke :onAdd="handleAdd" v-if="show" :onClose="() => show = false"/>
-          <button class="addButton" @click="show = true">Add Your Own Joke</button>
-        </div>
-        <div class="search">
-          <Search :search="search"/>
-          <JokesList v-if="jokes" :jokes="jokes"/>
-          <p class="errormsg">{{errormsg}}</p>
-        </div>
-      </div>
-    </section>
-  </div>
+  <section class="add">
+    <div>
+      <AddJoke :onAdd="handleAdd" v-if="show" :onClose="() => show = false"/>
+      <button class="addButton" @click="show = true">Add Your Own Joke</button>
+    </div>
+    <div class="search">
+      <Search :search="search"/>
+      <JokesList v-if="jokes" :jokes="jokes"/>
+      <p class="errormsg">{{errormsg}}</p>
+    </div>
+  </section>
 </template>
 
 <script>
